@@ -22,6 +22,7 @@ i18n
     },
     ns: namespace,
     defaultNS: 'main',
+    lng: "en"
   });
 
 export default i18n;

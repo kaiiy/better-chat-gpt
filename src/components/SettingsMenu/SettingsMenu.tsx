@@ -1,7 +1,6 @@
-import React, { useEffect, useState } from 'react';
+import  { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import useStore from '@store/store';
-import useCloudAuthStore from '@store/cloud-auth-store';
 
 import PopupModal from '@components/PopupModal';
 import SettingIcon from '@icon/SettingIcon';
@@ -39,7 +38,7 @@ const SettingsMenu = () => {
       {isModalOpen && (
         <PopupModal
           setIsModalOpen={setIsModalOpen}
-          title={t('setting') as string}
+          title="Settings"
           cancelButton={false}
         >
           <div className='p-6 border-b border-gray-200 dark:border-gray-600 flex flex-col items-center gap-4'>

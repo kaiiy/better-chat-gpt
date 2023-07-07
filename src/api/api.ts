@@ -1,6 +1,5 @@
 import { ShareGPTSubmitBodyInterface } from '@type/api';
 import { ConfigInterface, MessageInterface } from '@type/chat';
-import { isAzureEndpoint } from '@utils/api';
 
 export const getChatCompletion = async (
   endpoint: string,
@@ -14,24 +13,6 @@ export const getChatCompletion = async (
     ...customHeaders,
   };
   if (apiKey) headers.Authorization = `Bearer ${apiKey}`;
-
-  if (isAzureEndpoint(endpoint) && apiKey) {
-    headers['api-key'] = apiKey;
-
-    const gpt3forAzure = 'gpt-35-turbo';
-    const model =
-      config.model === 'gpt-3.5-turbo' ? gpt3forAzure : config.model;
-    const apiVersion = '2023-03-15-preview';
-
-    const path = `openai/deployments/${model}/chat/completions?api-version=${apiVersion}`;
-
-    if (!endpoint.endsWith(path)) {
-      if (!endpoint.endsWith('/')) {
-        endpoint += '/';
-      }
-      endpoint += path;
-    }
-  }
 
   const response = await fetch(endpoint, {
     method: 'POST',
@@ -61,24 +42,6 @@ export const getChatCompletionStream = async (
   };
   if (apiKey) headers.Authorization = `Bearer ${apiKey}`;
 
-  if (isAzureEndpoint(endpoint) && apiKey) {
-    headers['api-key'] = apiKey;
-
-    const gpt3forAzure = 'gpt-35-turbo';
-    const model =
-      config.model === 'gpt-3.5-turbo' ? gpt3forAzure : config.model;
-    const apiVersion = '2023-03-15-preview';
-
-    const path = `openai/deployments/${model}/chat/completions?api-version=${apiVersion}`;
-
-    if (!endpoint.endsWith(path)) {
-      if (!endpoint.endsWith('/')) {
-        endpoint += '/';
-      }
-      endpoint += path;
-    }
-  }
-
   const response = await fetch(endpoint, {
     method: 'POST',
     headers,
@@ -94,7 +57,7 @@ export const getChatCompletionStream = async (
     if (text.includes('model_not_found')) {
       throw new Error(
         text +
-          '\nMessage from Better ChatGPT:\nPlease ensure that you have access to the GPT-4 API!'
+        '\nMessage from Better ChatGPT:\nPlease ensure that you have access to the GPT-4 API!'
       );
     } else {
       throw new Error(
