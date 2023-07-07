@@ -11,8 +11,8 @@ export default defineConfig({
     injectRegister: 'auto',
     includeAssets: ['favicon.ico', 'apple-touch-icon.png'],
     manifest: {
-      theme_color: '#DC8183',
-      background_color: '#DC8183',
+      theme_color: '#343541',
+      background_color: '#343541',
       display: 'standalone',
       scope: '/better-chat-gpt/',
       start_url: './index.html',
