@@ -17,7 +17,7 @@ const encoder = new Tiktoken(
 );
 
 // https://github.com/dqbd/tiktoken/issues/23#issuecomment-1483317174
-export const getChatGPTEncoding = (
+const getChatGPTEncoding = (
   messages: MessageInterface[],
   model: ModelOptions
 ) => {

@@ -7,7 +7,7 @@ import { ConfigSlice, createConfigSlice } from './config-slice';
 import { PromptSlice, createPromptSlice } from './prompt-slice';
 import { ToastSlice, createToastSlice } from './toast-slice';
 
-export type StoreState = ChatSlice &
+type StoreState = ChatSlice &
   InputSlice &
   AuthSlice &
   ConfigSlice &
@@ -19,7 +19,7 @@ export type StoreSlice<T> = (
   get: StoreApi<StoreState>['getState']
 ) => T;
 
-export const createPartializedState = (state: StoreState) => ({
+const createPartializedState = (state: StoreState) => ({
   chats: state.chats,
   currentChatIndex: state.currentChatIndex,
   apiKey: state.apiKey,

@@ -70,7 +70,7 @@ export const isLegacyImport = (importedData: any) => {
   return false;
 };
 
-export const validateFolders = (
+const validateFolders = (
   folders: FolderCollection
 ): folders is FolderCollection => {
   if (typeof folders !== 'object') return false;
@@ -90,7 +90,7 @@ export const validateExportV1 = (data: ExportV1): data is ExportV1 => {
 };
 
 // Convert OpenAI chat format to BetterChatGPT format
-export const convertOpenAIToBetterChatGPTFormat = (
+const convertOpenAIToBetterChatGPTFormat = (
   openAIChat: OpenAIChat
 ): ChatInterface => {
   const messages: MessageInterface[] = [];

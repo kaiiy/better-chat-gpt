@@ -28,5 +28,3 @@ export type OpenAIChat = {
   };
   current_node: string;
 };
-
-export default ExportV1;

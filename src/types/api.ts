@@ -1,4 +1,4 @@
-export interface EventSourceDataInterface {
+interface EventSourceDataInterface {
   choices: EventSourceDataChoices[];
   created: number;
   id: string;
@@ -8,7 +8,7 @@ export interface EventSourceDataInterface {
 
 export type EventSourceData = EventSourceDataInterface | '[DONE]';
 
-export interface EventSourceDataChoices {
+interface EventSourceDataChoices {
   delta: {
     content?: string;
     role?: string;
