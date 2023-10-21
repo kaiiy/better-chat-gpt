@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { debounce } from 'lodash';
+import { debounce } from "mabiki";
 import useStore from '@store/store';
 
 import SearchBar from '@components/SearchBar';

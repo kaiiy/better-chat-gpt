@@ -2373,13 +2373,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/lodash@npm:^4.14.195":
-  version: 4.14.195
-  resolution: "@types/lodash@npm:4.14.195"
-  checksum: 6d733276df592614a0943a0053056140398b3c263cdf2557d4301b3a47b07ff561926cb9339a4725acbc7d8766f91ded218df11e0a4288cee369eafb5141d94d
-  languageName: node
-  linkType: hard
-
 "@types/mdast@npm:^3.0.0":
   version: 3.0.10
   resolution: "@types/mdast@npm:3.0.10"
@@ -2931,7 +2924,6 @@ __metadata:
   dependencies:
     "@dqbd/tiktoken": "npm:^1.0.7"
     "@tailwindcss/typography": "npm:^0.5.9"
-    "@types/lodash": "npm:^4.14.195"
     "@types/papaparse": "npm:^5.3.7"
     "@types/react": "npm:^18.2.14"
     "@types/react-dom": "npm:^18.2.6"
@@ -2950,7 +2942,6 @@ __metadata:
     i18next-browser-languagedetector: "npm:^7.1.0"
     i18next-http-backend: "npm:^2.2.1"
     katex: "npm:^0.16.8"
-    lodash: "npm:^4.17.21"
     match-sorter: "npm:^6.3.1"
     papaparse: "npm:^5.4.1"
     postcss: "npm:^8.4.25"
