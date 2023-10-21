@@ -1,5 +1,5 @@
 // languages that have translation files in `public/locales`
-export const i18nLanguages = [
+const i18nLanguages = [
   'en',
   'ja',
 ] as const;
