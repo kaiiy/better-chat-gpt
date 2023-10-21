@@ -48,7 +48,7 @@ export default defineConfig({
         },
       ],
     },
-  }),],
+  })],
   resolve: {
     alias: {
       '@icon/': new URL('./src/assets/icons/', import.meta.url).pathname,

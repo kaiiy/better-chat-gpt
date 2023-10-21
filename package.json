@@ -31,8 +31,7 @@
     },
     "linux": {
       "target": [
-        "tar.gz",
-        "AppImage"
+        "tar.gz"
       ],
       "category": "Chat",
       "icon": "dist/icon-rounded.png"
