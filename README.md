@@ -1,10 +1,6 @@
 <h1 align="center"><b>Better ChatGPT</b></h1>
 
 <p align="center">
-   English Version |
-</p>
-
-<p align="center">
     <a href="https://bettergpt.chat" target="_blank"><img src="public/apple-touch-icon.png" alt="Better ChatGPT" width="100" /></a>
 </p>
 
