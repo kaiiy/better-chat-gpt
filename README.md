@@ -2,9 +2,6 @@
 
 <p align="center">
    English Version |
-   <a href="README-zh_CN.md">
-      简体中文版
-   </a>
 </p>
 
 <p align="center">
