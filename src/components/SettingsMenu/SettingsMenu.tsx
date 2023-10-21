@@ -1,4 +1,4 @@
-import  { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import useStore from '@store/store';
 
@@ -41,7 +41,7 @@ const SettingsMenu = () => {
           title="Settings"
           cancelButton={false}
         >
-          <div className='p-6 border-b border-gray-200 dark:border-gray-600 flex flex-col items-center gap-4'>
+          <div className='py-6 px-16 border-b border-gray-200 dark:border-gray-600 flex flex-col items-center gap-4'>
             <LanguageSelector />
             <ThemeSwitcher />
             <div className='flex flex-col gap-3'>
