@@ -12,7 +12,6 @@ import InlineLatexToggle from './InlineLatexToggle';
 
 import PromptLibraryMenu from '@components/PromptLibraryMenu';
 import ChatConfigMenu from '@components/ChatConfigMenu';
-import EnterToSubmitToggle from './EnterToSubmitToggle';
 import TotalTokenCost, { TotalTokenCostToggle } from './TotalTokenCost';
 import ClearConversation from '@components/Menu/MenuOptions/ClearConversation';
 
@@ -46,7 +45,6 @@ const SettingsMenu = () => {
             <ThemeSwitcher />
             <div className='flex flex-col gap-3'>
               <AutoTitleToggle />
-              <EnterToSubmitToggle />
               <InlineLatexToggle />
               <AdvancedModeToggle />
               <TotalTokenCostToggle />

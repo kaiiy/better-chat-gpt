@@ -34,7 +34,6 @@ const createPartializedState = (state: StoreState) => ({
   firstVisit: state.firstVisit,
   hideSideMenu: state.hideSideMenu,
   folders: state.folders,
-  enterToSubmit: state.enterToSubmit,
   inlineLatex: state.inlineLatex,
   markdownMode: state.markdownMode,
   totalTokenUsed: state.totalTokenUsed,
