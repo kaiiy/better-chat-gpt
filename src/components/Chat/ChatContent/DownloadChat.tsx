@@ -6,11 +6,9 @@ import {
   chatToMarkdown,
   downloadImg,
   downloadMarkdown,
-  // downloadPDF,
   htmlToImg,
 } from '@utils/chat';
 import ImageIcon from '@icon/ImageIcon';
-import PdfIcon from '@icon/PdfIcon';
 import MarkdownIcon from '@icon/MarkdownIcon';
 import JsonIcon from '@icon/JsonIcon';
 
@@ -44,12 +42,11 @@ const DownloadChat = React.memo(
                     const imgData = await htmlToImg(saveRef.current);
                     downloadImg(
                       imgData,
-                      `${
-                        useStore
-                          .getState()
-                          .chats?.[
-                            useStore.getState().currentChatIndex
-                          ].title.trim() ?? 'download'
+                      `${useStore
+                        .getState()
+                        .chats?.[
+                        useStore.getState().currentChatIndex
+                      ].title.trim() ?? 'download'
                       }.png`
                     );
                   }
@@ -58,28 +55,6 @@ const DownloadChat = React.memo(
                 <ImageIcon />
                 Image
               </button>
-              {/* <button
-                className='btn btn-neutral gap-2'
-                onClick={async () => {
-                  if (saveRef && saveRef.current) {
-                    const imgData = await htmlToImg(saveRef.current);
-                    downloadPDF(
-                      imgData,
-                      useStore.getState().theme,
-                      `${
-                        useStore
-                          .getState()
-                          .chats?.[
-                            useStore.getState().currentChatIndex
-                          ].title.trim() ?? 'download'
-                      }.pdf`
-                    );
-                  }
-                }}
-              >
-                <PdfIcon />
-                PDF
-              </button> */}
               <button
                 className='btn btn-neutral gap-2'
                 onClick={async () => {
@@ -91,10 +66,9 @@ const DownloadChat = React.memo(
                       );
                       downloadMarkdown(
                         markdown,
-                        `${
-                          chats[
-                            useStore.getState().currentChatIndex
-                          ].title.trim() ?? 'download'
+                        `${chats[
+                          useStore.getState().currentChatIndex
+                        ].title.trim() ?? 'download'
                         }.md`
                       );
                     }
@@ -110,7 +84,8 @@ const DownloadChat = React.memo(
                   const chats = useStore.getState().chats;
                   if (chats) {
                     const chat = chats[useStore.getState().currentChatIndex];
-                    downloadFile([chat], chat.title);
+                    const filename = chat.title.replaceAll(' ', '_');
+                    downloadFile([chat], filename);
                   }
                 }}
               >

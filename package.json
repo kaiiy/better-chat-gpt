@@ -11,6 +11,7 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
+    "check": "knip && tsc",
     "electron": "concurrently -k \"BROWSER=none yarn dev\" \"wait-on tcp:5173 && electron .\"",
     "pack": "yarn build && electron-builder --dir",
     "make": "yarn build && electron-builder"
@@ -78,6 +79,7 @@
     "concurrently": "^8.2.0",
     "electron": "^25.2.0",
     "electron-builder": "24.5.2",
+    "knip": "^2.35.0",
     "postcss": "^8.4.25",
     "tailwindcss": "^3.3.2",
     "typescript": "^5.1.6",
