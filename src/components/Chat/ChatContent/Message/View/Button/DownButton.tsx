@@ -1,15 +1,15 @@
-import React from 'react';
+import React from "react";
 
-import DownChevronArrow from '@icon/DownChevronArrow';
+import DownChevronArrow from "@icon/DownChevronArrow";
 
-import BaseButton from './BaseButton';
+import BaseButton from "./BaseButton";
 
 const DownButton = ({
-  onClick,
+	onClick,
 }: {
-  onClick: React.MouseEventHandler<HTMLButtonElement>;
+	onClick: React.MouseEventHandler<HTMLButtonElement>;
 }) => {
-  return <BaseButton icon={<DownChevronArrow />} onClick={onClick} />;
+	return <BaseButton icon={<DownChevronArrow />} onClick={onClick} />;
 };
 
 export default DownButton;
