@@ -56,7 +56,7 @@ export const getChatCompletionStream = async (
 		if (text.includes("model_not_found")) {
 			throw new Error(
 				text +
-				"\nMessage from Better ChatGPT:\nPlease ensure that you have access to the GPT-4 API!",
+					"\nMessage from Better ChatGPT:\nPlease ensure that you have access to the GPT-4 API!",
 			);
 		} else {
 			throw new Error(
