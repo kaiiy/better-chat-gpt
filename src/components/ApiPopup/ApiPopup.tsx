@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import useStore from "@store/store";
 import { useTranslation, Trans } from "react-i18next";
 
@@ -63,7 +63,7 @@ const ApiPopup = () => {
 							<a
 								href="https://platform.openai.com/account/api-keys"
 								className="link"
-								target="_blank"
+								target="_blank" rel="noreferrer"
 							/>,
 						]}
 					/>

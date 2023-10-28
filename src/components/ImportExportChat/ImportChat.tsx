@@ -41,7 +41,8 @@ const ImportChat = () => {
 							const folderNameToIdMap: Record<string, string> = {};
 							const parsedFolders: string[] = [];
 
-							parsedData.forEach((data) => {
+							const newFolders: FolderCollection = {};
+							for (const data of parsedData) {
 								const folder = data.folder;
 								if (folder) {
 									if (!parsedFolders.includes(folder)) {
@@ -50,21 +51,18 @@ const ImportChat = () => {
 									}
 									data.folder = folderNameToIdMap[folder];
 								}
-							});
+							}
 
-							const newFolders: FolderCollection = parsedFolders.reduce(
-								(acc, curr, index) => {
-									const id = folderNameToIdMap[curr];
-									const _newFolder: Folder = {
-										id,
-										name: curr,
-										expanded: false,
-										order: index,
-									};
-									return { [id]: _newFolder, ...acc };
-								},
-								{},
-							);
+							for (const [index, curr] of parsedFolders.entries()) {
+								const id = folderNameToIdMap[curr];
+								const _newFolder: Folder = {
+									id,
+									name: curr,
+									expanded: false,
+									order: index,
+								};
+								newFolders[id] = _newFolder;
+							}
 
 							// increment the order of existing folders
 							const offset = parsedFolders.length;
@@ -150,6 +148,7 @@ const ImportChat = () => {
 				ref={inputRef}
 			/>
 			<button
+				type="button"
 				className="btn btn-small btn-primary mt-3"
 				onClick={handleFileUpload}
 			>
@@ -157,11 +156,10 @@ const ImportChat = () => {
 			</button>
 			{alert && (
 				<div
-					className={`relative py-2 px-3 w-full mt-3 border rounded-md text-gray-600 dark:text-gray-100 text-sm whitespace-pre-wrap ${
-						alert.success
-							? "border-green-500 bg-green-500/10"
-							: "border-red-500 bg-red-500/10"
-					}`}
+					className={`relative py-2 px-3 w-full mt-3 border rounded-md text-gray-600 dark:text-gray-100 text-sm whitespace-pre-wrap ${alert.success
+						? "border-green-500 bg-green-500/10"
+						: "border-red-500 bg-red-500/10"
+						}`}
 				>
 					{alert.message}
 				</div>

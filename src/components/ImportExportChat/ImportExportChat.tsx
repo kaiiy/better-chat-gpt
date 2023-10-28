@@ -1,5 +1,4 @@
-import React, { useState } from "react";
-import { useTranslation } from "react-i18next";
+import { useState } from "react";
 
 import PopupModal from "@components/PopupModal";
 import ExportIcon from "@icon/ExportIcon";
@@ -9,7 +8,6 @@ import ImportChat from "./ImportChat";
 import ImportChatOpenAI from "./ImportChatOpenAI";
 
 const ImportExportChat = () => {
-	const { t } = useTranslation();
 	const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
 
 	return (
@@ -21,11 +19,11 @@ const ImportExportChat = () => {
 				}}
 			>
 				<ExportIcon className="w-4 h-4" />
-				{t("import")} / {t("export")}
+				Import / Export
 			</a>
 			{isModalOpen && (
 				<PopupModal
-					title={`${t("import")} / ${t("export")}`}
+					title={"Import / Export"}
 					setIsModalOpen={setIsModalOpen}
 					cancelButton={false}
 				>

@@ -5,7 +5,6 @@ import { _defaultChatConfig } from "@constants/chat";
 import useStore from "@store/store";
 import { ChatInterface, MessageInterface } from "@type/chat";
 import { limitMessageTokens, updateTotalTokenUsed } from "@utils/messageUtils";
-import React from "react";
 import { useTranslation } from "react-i18next";
 
 const useSubmit = () => {
@@ -118,7 +117,8 @@ const useSubmit = () => {
 					if (result === "[DONE]" || done) {
 						reading = false;
 					} else {
-						const resultString = result.reduce((output: string, curr) => {
+						const resultString = result.reduce((prevOutput: string, curr) => {
+							let output = prevOutput;
 							if (typeof curr === "string") {
 								partial += curr;
 							} else {
