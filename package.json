@@ -54,7 +54,8 @@
     "vite-plugin-wasm": "^3.2.2"
   },
   "volta": {
-    "node": "20.8.1",
+    "node": "20.9.0",
     "yarn": "4.0.0"
-  }
+  },
+  "packageManager": "yarn@4.0.0"
 }
