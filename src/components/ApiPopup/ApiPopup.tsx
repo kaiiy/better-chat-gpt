@@ -63,7 +63,8 @@ const ApiPopup = () => {
 							<a
 								href="https://platform.openai.com/account/api-keys"
 								className="link"
-								target="_blank" rel="noreferrer"
+								target="_blank"
+								rel="noreferrer"
 							/>,
 						]}
 					/>

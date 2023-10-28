@@ -20,7 +20,11 @@ const ChatConfigMenu = () => {
 	const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
 	return (
 		<div>
-			<button className="btn btn-neutral" onClick={() => setIsModalOpen(true)}>
+			<button
+				type="button"
+				className="btn btn-neutral"
+				onClick={() => setIsModalOpen(true)}
+			>
 				{t("defaultChatConfig")}
 			</button>
 			{isModalOpen && <ChatConfigPopup setIsModalOpen={setIsModalOpen} />}

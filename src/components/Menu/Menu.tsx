@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 
 import useStore from "@store/store";
 
@@ -70,9 +70,9 @@ const Menu = () => {
 					}}
 				>
 					{hideSideMenu ? (
-						<MenuIcon className="h-4 w-4" />
+						<MenuIcon className="h-6 w-6" />
 					) : (
-						<DownArrow className="h-4 w-4" />
+						<DownArrow className="h-6 w-6" />
 					)}
 				</div>
 			</div>

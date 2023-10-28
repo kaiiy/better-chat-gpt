@@ -2,7 +2,7 @@ import MoonIcon from "@icon/MoonIcon";
 import SunIcon from "@icon/SunIcon";
 import useStore from "@store/store";
 import { Theme } from "@type/theme";
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import { useTranslation } from "react-i18next";
 
 const getOppositeTheme = (theme: Theme): Theme => {
@@ -18,7 +18,7 @@ const ThemeSwitcher = () => {
 	const setTheme = useStore((state) => state.setTheme);
 
 	const switchTheme = () => {
-		setTheme(getOppositeTheme(theme!));
+		setTheme(getOppositeTheme(theme));
 	};
 
 	useEffect(() => {
@@ -27,6 +27,7 @@ const ThemeSwitcher = () => {
 
 	return theme ? (
 		<button
+			type="button"
 			className="items-center gap-3 btn btn-neutral"
 			onClick={switchTheme}
 		>

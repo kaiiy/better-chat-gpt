@@ -86,7 +86,6 @@ const PopupModal = ({
 						</div>
 					</div>
 				</div>
-				{/* biome-ignore lint/a11y/useKeyWithClickEvents: <explanation> */}
 				<div
 					className="bg-gray-800/90 absolute top-0 left-0 h-full w-full z-[-1]"
 					onClick={() => _handleBackdropClose}

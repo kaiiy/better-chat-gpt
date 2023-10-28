@@ -41,11 +41,15 @@ const ChatHistoryList = () => {
 		const chats = useStore.getState().chats;
 		const folders = useStore.getState().folders;
 
+		// biome-ignore lint/complexity/noForEach: <explanation>
 		Object.values(folders)
 			.sort((a, b) => a.order - b.order)
-			.forEach((f) => (_folders[f.id] = []));
+			.forEach((f) => {
+				_folders[f.id] = [];
+			});
 
 		if (chats) {
+			// biome-ignore lint/complexity/noForEach: <explanation>
 			chats.forEach((chat, index) => {
 				const _filterLowerCase = filterRef.current.toLowerCase();
 				const _chatTitle = chat.title.toLowerCase();
@@ -183,7 +187,10 @@ const ChatHistoryList = () => {
 
 const ShowMoreButton = () => {
 	return (
-		<button className="btn relative btn-dark btn-small m-auto mb-2">
+		<button
+			type="button"
+			className="btn relative btn-dark btn-small m-auto mb-2"
+		>
 			<div className="flex items-center justify-center gap-2">Show more</div>
 		</button>
 	);

@@ -157,12 +157,17 @@ const ContentView = memo(
 					{isDelete && (
 						<>
 							<button
+								type="button"
 								className="p-1 hover:text-white"
 								onClick={() => setIsDelete(false)}
 							>
 								<CrossIcon />
 							</button>
-							<button className="p-1 hover:text-white" onClick={handleDelete}>
+							<button
+								type="button"
+								className="p-1 hover:text-white"
+								onClick={handleDelete}
+							>
 								<TickIcon />
 							</button>
 						</>

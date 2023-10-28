@@ -60,9 +60,9 @@ const ChatFolder = ({
 		const updatedChats: ChatInterface[] = JSON.parse(
 			JSON.stringify(useStore.getState().chats),
 		);
-		updatedChats.forEach((chat) => {
+		for (const chat of updatedChats) {
 			if (chat.folder === folderId) chat.folder = undefined;
-		});
+		}
 		setChats(updatedChats);
 
 		const updatedFolders: FolderCollection = JSON.parse(
@@ -211,10 +211,18 @@ const ChatFolder = ({
 				>
 					{isDelete || isEdit ? (
 						<>
-							<button className="p-1 hover:text-white" onClick={handleTick}>
+							<button
+								type="button"
+								className="p-1 hover:text-white"
+								onClick={handleTick}
+							>
 								<TickIcon />
 							</button>
-							<button className="p-1 hover:text-white" onClick={handleCross}>
+							<button
+								type="button"
+								className="p-1 hover:text-white"
+								onClick={handleCross}
+							>
 								<CrossIcon />
 							</button>
 						</>
@@ -225,6 +233,7 @@ const ChatFolder = ({
 								ref={paletteRef}
 							>
 								<button
+									type="button"
 									className="p-1 hover:text-white"
 									onClick={() => {
 										setShowPalette((prev) => !prev);
@@ -237,6 +246,7 @@ const ChatFolder = ({
 										<>
 											{folderColorOptions.map((c) => (
 												<button
+													type="button"
 													key={c}
 													style={{ background: c }}
 													className={
@@ -248,6 +258,7 @@ const ChatFolder = ({
 												/>
 											))}
 											<button
+												type="button"
 												onClick={() => {
 													updateColor();
 												}}
@@ -260,18 +271,24 @@ const ChatFolder = ({
 							</div>
 
 							<button
+								type="button"
 								className="p-1 hover:text-white md:hidden group-hover/folder:md:inline"
 								onClick={() => setIsEdit(true)}
 							>
 								<EditIcon />
 							</button>
 							<button
+								type="button"
 								className="p-1 hover:text-white md:hidden group-hover/folder:md:inline"
 								onClick={() => setIsDelete(true)}
 							>
 								<DeleteIcon />
 							</button>
-							<button className="p-1 hover:text-white" onClick={toggleExpanded}>
+							<button
+								type="button"
+								className="p-1 hover:text-white"
+								onClick={toggleExpanded}
+							>
 								<DownChevronArrow
 									className={`${
 										isExpanded ? "rotate-180" : ""

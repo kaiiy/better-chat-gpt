@@ -13,6 +13,7 @@ const ExportPrompt = () => {
 				{t("export")} (CSV)
 			</div>
 			<button
+				type="button"
 				className="btn btn-small btn-primary"
 				onClick={() => {
 					exportPrompts(prompts);

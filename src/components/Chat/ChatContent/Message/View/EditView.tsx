@@ -180,6 +180,7 @@ const EditViewButtons = memo(
 				<div className="flex-1 text-center mt-2 flex justify-center">
 					{sticky && (
 						<button
+							type="button"
 							className={`btn relative mr-2 btn-primary ${
 								generating ? "cursor-not-allowed opacity-40" : ""
 							}`}
@@ -192,6 +193,7 @@ const EditViewButtons = memo(
 					)}
 
 					<button
+						type="button"
 						className={`btn relative mr-2 ${
 							sticky
 								? `btn-neutral ${
@@ -208,6 +210,7 @@ const EditViewButtons = memo(
 
 					{sticky || (
 						<button
+							type="button"
 							className="btn relative mr-2 btn-neutral"
 							onClick={() => {
 								!generating && setIsModalOpen(true);
@@ -221,6 +224,7 @@ const EditViewButtons = memo(
 
 					{sticky || (
 						<button
+							type="button"
 							className="btn relative btn-neutral"
 							onClick={() => setIsEdit(false)}
 						>

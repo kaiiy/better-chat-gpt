@@ -15,7 +15,11 @@ const PromptLibraryMenu = () => {
 	const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
 	return (
 		<div>
-			<button className="btn btn-neutral" onClick={() => setIsModalOpen(true)}>
+			<button
+				type="button"
+				className="btn btn-neutral"
+				onClick={() => setIsModalOpen(true)}
+			>
 				{t("promptLibrary")}
 			</button>
 			{isModalOpen && (
@@ -122,7 +126,7 @@ const PromptLibraryMenuPopUp = ({
 									onInput={handleInput}
 									value={prompt.name}
 									rows={1}
-								></textarea>
+								/>
 							</div>
 							<div className="flex-1">
 								<textarea
@@ -139,7 +143,7 @@ const PromptLibraryMenuPopUp = ({
 									onInput={handleInput}
 									value={prompt.prompt}
 									rows={1}
-								></textarea>
+								/>
 							</div>
 							<div
 								className="cursor-pointer"
@@ -167,6 +171,7 @@ const PromptLibraryMenuPopUp = ({
 						href="https://github.com/f/awesome-chatgpt-prompts"
 						target="_blank"
 						className="link"
+						rel="noreferrer"
 					>
 						awesome-chatgpt-prompts
 					</a>

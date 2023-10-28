@@ -22,6 +22,7 @@ const ClearConversation = () => {
 	return (
 		<>
 			<button
+				type="button"
 				className="btn btn-neutral"
 				onClick={() => {
 					setIsModalOpen(true);

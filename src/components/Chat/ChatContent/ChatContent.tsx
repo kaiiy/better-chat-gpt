@@ -65,6 +65,7 @@ const ChatContent = () => {
 						{messages?.map(
 							(message, index) =>
 								(advancedMode || index !== 0 || message.role !== "system") && (
+									// biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
 									<React.Fragment key={index}>
 										<Message
 											role={message.role}

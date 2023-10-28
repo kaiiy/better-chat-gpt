@@ -37,6 +37,7 @@ const CodeBar = React.memo(
 			<div className="flex items-center relative text-gray-200 bg-gray-800 px-4 py-2 text-xs font-sans">
 				<span className="">{lang}</span>
 				<button
+					type="button"
 					className="flex ml-auto gap-2"
 					onClick={async () => {
 						const codeString = codeRef.current?.textContent;

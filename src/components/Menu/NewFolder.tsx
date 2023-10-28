@@ -34,15 +34,16 @@ const NewFolder = () => {
 			order: 0,
 		};
 
-		Object.values(updatedFolders).forEach((folder) => {
+		for (const folder of Object.values(updatedFolders)) {
 			folder.order += 1;
-		});
+		}
 
 		setFolders({ [id]: newFolder, ...updatedFolders });
 	};
 
 	return (
-		<a
+		<button
+			type="button"
 			className={`flex py-3 px-3 items-center gap-3 rounded-md hover:bg-gray-500/10 transition-colors duration-200 text-white text-sm mb-2 flex-shrink-0 border border-white/20 transition-opacity ${
 				generating
 					? "cursor-not-allowed opacity-40"
@@ -53,7 +54,7 @@ const NewFolder = () => {
 			}}
 		>
 			<NewFolderIcon />
-		</a>
+		</button>
 	);
 };
 

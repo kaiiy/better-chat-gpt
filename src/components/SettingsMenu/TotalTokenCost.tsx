@@ -39,6 +39,7 @@ const TotalTokenCost = () => {
 
 	useEffect(() => {
 		const updatedCostMapping: CostMapping = [];
+		// biome-ignore lint/complexity/noForEach: <explanation>
 		Object.entries(totalTokenUsed).forEach(([model, tokenCost]) => {
 			const cost = tokenCostToCost(tokenCost, model as ModelOptions);
 			updatedCostMapping.push({ model, cost });
@@ -118,6 +119,7 @@ export const TotalTokenCostDisplay = () => {
 	useEffect(() => {
 		let updatedTotalCost = 0;
 
+		// biome-ignore lint/complexity/noForEach: <explanation>
 		Object.entries(totalTokenUsed).forEach(([model, tokenCost]) => {
 			updatedTotalCost += tokenCostToCost(tokenCost, model as ModelOptions);
 		});

@@ -1,7 +1,6 @@
 import PopupModal from "@components/PopupModal";
 import { modelMaxToken, modelOptions } from "@constants/chat";
 import DownChevronArrow from "@icon/DownChevronArrow";
-import useStore from "@store/store";
 import { ConfigInterface, ModelOptions } from "@type/chat";
 import React, { useEffect, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
@@ -92,9 +91,8 @@ export const ModelSelector = ({
 			</button>
 			<div
 				id="dropdown"
-				className={`${
-					dropDown ? "" : "hidden"
-				} absolute top-100 bottom-100 z-10 bg-white rounded-lg shadow-xl border-b border-black/10 dark:border-gray-900/50 text-gray-800 dark:text-gray-100 group dark:bg-gray-800 opacity-90`}
+				className={`${dropDown ? "" : "hidden"
+					} absolute top-100 bottom-100 z-10 bg-white rounded-lg shadow-xl border-b border-black/10 dark:border-gray-900/50 text-gray-800 dark:text-gray-100 group dark:bg-gray-800 opacity-90`}
 			>
 				<ul
 					className="text-sm text-gray-700 dark:text-gray-200 p-0 m-0"

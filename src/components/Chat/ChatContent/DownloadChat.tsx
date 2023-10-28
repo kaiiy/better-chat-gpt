@@ -21,6 +21,7 @@ const DownloadChat = React.memo(
 		return (
 			<>
 				<button
+					type="button"
 					className="btn btn-neutral"
 					onClick={() => {
 						setIsModalOpen(true);
@@ -36,6 +37,7 @@ const DownloadChat = React.memo(
 					>
 						<div className="p-6 border-b border-gray-200 dark:border-gray-600 flex gap-4">
 							<button
+								type="button"
 								className="btn btn-neutral gap-2"
 								onClick={async () => {
 									if (saveRef?.current) {
@@ -57,6 +59,7 @@ const DownloadChat = React.memo(
 								Image
 							</button>
 							<button
+								type="button"
 								className="btn btn-neutral gap-2"
 								onClick={async () => {
 									if (saveRef?.current) {
@@ -81,6 +84,7 @@ const DownloadChat = React.memo(
 								Markdown
 							</button>
 							<button
+								type="button"
 								className="btn btn-neutral gap-2"
 								onClick={async () => {
 									const chats = useStore.getState().chats;

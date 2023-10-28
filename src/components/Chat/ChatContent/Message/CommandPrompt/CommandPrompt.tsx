@@ -42,6 +42,7 @@ const CommandPrompt = ({
 	return (
 		<div className="relative max-wd-sm" ref={dropDownRef}>
 			<button
+				type="button"
 				className="btn btn-neutral btn-small"
 				onClick={() => setDropDown(!dropDown)}
 			>
