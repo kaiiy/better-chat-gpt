@@ -3,11 +3,9 @@ import { _defaultChatConfig } from "@constants/chat";
 import useStore from "@store/store";
 import { ChatInterface, ConfigInterface } from "@type/chat";
 import React, { useEffect, useState } from "react";
-import { useTranslation } from "react-i18next";
 import { shallow } from "zustand/shallow";
 
 const ChatTitle = React.memo(() => {
-	const { t } = useTranslation("model");
 	const config = useStore(
 		(state) =>
 			state.chats &&
@@ -49,22 +47,22 @@ const ChatTitle = React.memo(() => {
 				}}
 			>
 				<div className="text-center p-1 rounded-md bg-gray-300/20 dark:bg-gray-900/10 hover:bg-gray-300/50 dark:hover:bg-gray-900/50">
-					{t("model")}: {config.model}
+					Model: {config.model}
 				</div>
 				<div className="text-center p-1 rounded-md bg-gray-300/20 dark:bg-gray-900/10 hover:bg-gray-300/50 dark:hover:bg-gray-900/50">
-					{t("token.label")}: {config.max_tokens}
+					Max Token: {config.max_tokens}
 				</div>
 				<div className="text-center p-1 rounded-md bg-gray-300/20 dark:bg-gray-900/10 hover:bg-gray-300/50 dark:hover:bg-gray-900/50">
-					{t("temperature.label")}: {config.temperature}
+					Temperature: {config.temperature}
 				</div>
 				<div className="text-center p-1 rounded-md bg-gray-300/20 dark:bg-gray-900/10 hover:bg-gray-300/50 dark:hover:bg-gray-900/50">
-					{t("topP.label")}: {config.top_p}
+					Top-p: {config.top_p}
 				</div>
 				<div className="text-center p-1 rounded-md bg-gray-300/20 dark:bg-gray-900/10 hover:bg-gray-300/50 dark:hover:bg-gray-900/50">
-					{t("presencePenalty.label")}: {config.presence_penalty}
+					Presence Penalty: {config.presence_penalty}
 				</div>
 				<div className="text-center p-1 rounded-md bg-gray-300/20 dark:bg-gray-900/10 hover:bg-gray-300/50 dark:hover:bg-gray-900/50">
-					{t("frequencyPenalty.label")}: {config.frequency_penalty}
+					Frequency Penalty: {config.frequency_penalty}
 				</div>
 			</div>
 			{isModalOpen && (

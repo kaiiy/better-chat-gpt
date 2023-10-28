@@ -1,6 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
 import useStore from "@store/store";
-import { useTranslation } from "react-i18next";
 
 import PopupModal from "@components/PopupModal";
 import { Prompt } from "@type/prompt";
@@ -11,7 +10,6 @@ import ImportPrompt from "./ImportPrompt";
 import ExportPrompt from "./ExportPrompt";
 
 const PromptLibraryMenu = () => {
-	const { t } = useTranslation();
 	const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
 	return (
 		<div>
@@ -20,7 +18,7 @@ const PromptLibraryMenu = () => {
 				className="btn btn-neutral"
 				onClick={() => setIsModalOpen(true)}
 			>
-				{t("promptLibrary")}
+				Prompt Library
 			</button>
 			{isModalOpen && (
 				<PromptLibraryMenuPopUp setIsModalOpen={setIsModalOpen} />
@@ -34,8 +32,6 @@ const PromptLibraryMenuPopUp = ({
 }: {
 	setIsModalOpen: React.Dispatch<React.SetStateAction<boolean>>;
 }) => {
-	const { t } = useTranslation();
-
 	const setPrompts = useStore((state) => state.setPrompts);
 	const prompts = useStore((state) => state.prompts);
 
@@ -92,7 +88,7 @@ const PromptLibraryMenuPopUp = ({
 
 	return (
 		<PopupModal
-			title={t("promptLibrary") as string}
+			title={"Prompt Library"}
 			setIsModalOpen={setIsModalOpen}
 			handleConfirm={handleSave}
 		>
@@ -103,8 +99,8 @@ const PromptLibraryMenuPopUp = ({
 				</div>
 				<div className="flex flex-col p-2 max-w-full" ref={container}>
 					<div className="flex font-bold border-b border-gray-500/50 mb-1 p-1">
-						<div className="sm:w-1/4 max-sm:flex-1">{t("name")}</div>
-						<div className="flex-1">{t("prompt")}</div>
+						<div className="sm:w-1/4 max-sm:flex-1">Name</div>
+						<div className="flex-1">Prompt</div>
 					</div>
 					{_prompts.map((prompt, index) => (
 						<div
@@ -162,11 +158,11 @@ const PromptLibraryMenuPopUp = ({
 						className="btn btn-neutral cursor-pointer text-xs"
 						onClick={clearPrompts}
 					>
-						{t("clearPrompts")}
+						Clear prompts
 					</div>
 				</div>
 				<div className="mt-6 px-2">
-					{t("morePrompts")}
+					You can find more prompts here:
 					<a
 						href="https://github.com/f/awesome-chatgpt-prompts"
 						target="_blank"

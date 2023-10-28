@@ -3,10 +3,7 @@ import LanguageDetector from "i18next-browser-languagedetector";
 import Backend from "i18next-http-backend";
 import { initReactI18next } from "react-i18next";
 
-const googleClientId = import.meta.env.VITE_GOOGLE_CLIENT_ID || undefined;
-
 const namespace = ["main", "api", "about", "model"];
-if (googleClientId) namespace.push("drive");
 
 i18n
 	.use(Backend)
