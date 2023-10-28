@@ -1,10 +1,10 @@
+import ConfigMenu from "@components/ConfigMenu";
+import { _defaultChatConfig } from "@constants/chat";
+import useStore from "@store/store";
+import { ChatInterface, ConfigInterface } from "@type/chat";
 import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { shallow } from "zustand/shallow";
-import useStore from "@store/store";
-import ConfigMenu from "@components/ConfigMenu";
-import { ChatInterface, ConfigInterface } from "@type/chat";
-import { _defaultChatConfig } from "@constants/chat";
 
 const ChatTitle = React.memo(() => {
 	const { t } = useTranslation("model");

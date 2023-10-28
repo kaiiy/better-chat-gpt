@@ -1,5 +1,5 @@
-import { StoreSlice } from "./store";
 import { Role } from "@type/chat";
+import { StoreSlice } from "./store";
 
 export interface InputSlice {
 	inputRole: Role;

@@ -3,8 +3,8 @@ import { useTranslation } from "react-i18next";
 
 import useStore from "@store/store";
 
-import { modelCost } from "@constants/chat";
 import Toggle from "@components/Toggle/Toggle";
+import { modelCost } from "@constants/chat";
 
 import { ModelOptions, TotalTokenUsed } from "@type/chat";
 

@@ -1,15 +1,15 @@
-import { useEffect } from "react";
 import useStore from "@store/store";
+import { useEffect } from "react";
 import i18n from "./i18n";
 
 import Chat from "@components/Chat";
 import Menu from "@components/Menu";
 
+import ApiPopup from "@components/ApiPopup";
+import Toast from "@components/Toast";
 import useInitializeNewChat from "@hooks/useInitializeNewChat";
 import { ChatInterface } from "@type/chat";
 import { Theme } from "@type/theme";
-import ApiPopup from "@components/ApiPopup";
-import Toast from "@components/Toast";
 
 function App() {
 	const initializeNewChat = useInitializeNewChat();

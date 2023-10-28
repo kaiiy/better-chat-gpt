@@ -1,11 +1,11 @@
-import React from "react";
 import useStore from "@store/store";
+import React from "react";
 
-import Api from "./Api";
 import ImportExportChat from "@components/ImportExportChat";
 import SettingsMenu from "@components/SettingsMenu";
-import CollapseOptions from "./CollapseOptions";
 import { TotalTokenCostDisplay } from "@components/SettingsMenu/TotalTokenCost";
+import Api from "./Api";
+import CollapseOptions from "./CollapseOptions";
 
 const googleClientId = import.meta.env.VITE_GOOGLE_CLIENT_ID || undefined;
 

@@ -1,6 +1,6 @@
+import useStore from "@store/store";
 import React from "react";
 import { useTranslation } from "react-i18next";
-import useStore from "@store/store";
 
 import PlusIcon from "@icon/PlusIcon";
 

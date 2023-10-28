@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
-import TickIcon from "@icon/TickIcon";
 import CopyIcon from "@icon/CopyIcon";
+import TickIcon from "@icon/TickIcon";
 
 import BaseButton from "./BaseButton";
 

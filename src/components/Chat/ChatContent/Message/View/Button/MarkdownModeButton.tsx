@@ -4,8 +4,8 @@ import useStore from "@store/store";
 
 import BaseButton from "./BaseButton";
 
-import MarkdownIcon from "@icon/MarkdownIcon";
 import FileTextIcon from "@icon/FileTextIcon";
+import MarkdownIcon from "@icon/MarkdownIcon";
 
 const MarkdownModeButton = () => {
 	const markdownMode = useStore((state) => state.markdownMode);

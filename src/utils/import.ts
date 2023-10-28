@@ -1,17 +1,17 @@
 import { v4 as uuidv4 } from "uuid";
 
 import {
+	_defaultChatConfig,
+	defaultModel,
+	modelOptions,
+} from "@constants/chat";
+import {
 	ChatInterface,
 	ConfigInterface,
 	FolderCollection,
 	MessageInterface,
 } from "@type/chat";
 import { roles } from "@type/chat";
-import {
-	defaultModel,
-	modelOptions,
-	_defaultChatConfig,
-} from "@constants/chat";
 import { ExportV1, OpenAIChat } from "@type/export";
 
 export const validateAndFixChats = (chats: any): chats is ChatInterface[] => {

@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from "react";
 import useStore from "@store/store";
+import React, { useEffect, useState } from "react";
 
 export type ToastStatus = "success" | "error" | "warning";
 

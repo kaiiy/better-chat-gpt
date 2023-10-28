@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
 
-import PersonIcon from "@icon/PersonIcon";
 import ApiMenu from "@components/ApiMenu";
+import PersonIcon from "@icon/PersonIcon";
 
 const Config = () => {
 	const { t } = useTranslation();

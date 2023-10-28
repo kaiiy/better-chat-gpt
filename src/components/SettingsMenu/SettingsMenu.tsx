@@ -1,18 +1,18 @@
+import useStore from "@store/store";
 import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
-import useStore from "@store/store";
 
+import ThemeSwitcher from "@components/Menu/MenuOptions/ThemeSwitcher";
 import PopupModal from "@components/PopupModal";
 import SettingIcon from "@icon/SettingIcon";
-import ThemeSwitcher from "@components/Menu/MenuOptions/ThemeSwitcher";
-import AutoTitleToggle from "./AutoTitleToggle";
 import AdvancedModeToggle from "./AdvencedModeToggle";
+import AutoTitleToggle from "./AutoTitleToggle";
 import InlineLatexToggle from "./InlineLatexToggle";
 
-import PromptLibraryMenu from "@components/PromptLibraryMenu";
 import ChatConfigMenu from "@components/ChatConfigMenu";
-import TotalTokenCost, { TotalTokenCostToggle } from "./TotalTokenCost";
 import ClearConversation from "@components/Menu/MenuOptions/ClearConversation";
+import PromptLibraryMenu from "@components/PromptLibraryMenu";
+import TotalTokenCost, { TotalTokenCostToggle } from "./TotalTokenCost";
 
 const SettingsMenu = () => {
 	const { t } = useTranslation();

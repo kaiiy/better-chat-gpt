@@ -1,8 +1,7 @@
-import React, { useState } from "react";
 import useStore from "@store/store";
+import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
 
-import PopupModal from "@components/PopupModal";
 import {
 	FrequencyPenaltySlider,
 	MaxTokenSlider,
@@ -11,9 +10,10 @@ import {
 	TemperatureSlider,
 	TopPSlider,
 } from "@components/ConfigMenu/ConfigMenu";
+import PopupModal from "@components/PopupModal";
 
-import { ModelOptions } from "@type/chat";
 import { _defaultChatConfig, _defaultSystemMessage } from "@constants/chat";
+import { ModelOptions } from "@type/chat";
 
 const ChatConfigMenu = () => {
 	const { t } = useTranslation("model");

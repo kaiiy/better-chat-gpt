@@ -1,16 +1,16 @@
-import React, { useState } from "react";
-import { useTranslation } from "react-i18next";
-import useStore from "@store/store";
 import PopupModal from "@components/PopupModal";
+import ImageIcon from "@icon/ImageIcon";
+import JsonIcon from "@icon/JsonIcon";
+import MarkdownIcon from "@icon/MarkdownIcon";
+import useStore from "@store/store";
 import {
 	chatToMarkdown,
 	downloadImg,
 	downloadMarkdown,
 	htmlToImg,
 } from "@utils/chat";
-import ImageIcon from "@icon/ImageIcon";
-import MarkdownIcon from "@icon/MarkdownIcon";
-import JsonIcon from "@icon/JsonIcon";
+import React, { useState } from "react";
+import { useTranslation } from "react-i18next";
 
 import downloadFile from "@utils/downloadFile";
 

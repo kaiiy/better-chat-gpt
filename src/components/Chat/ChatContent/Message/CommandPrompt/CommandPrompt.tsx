@@ -1,9 +1,9 @@
-import React, { useEffect, useRef, useState } from "react";
 import useStore from "@store/store";
+import React, { useEffect, useRef, useState } from "react";
 
-import { useTranslation } from "react-i18next";
-import { matchSorter } from "match-sorter";
 import { Prompt } from "@type/prompt";
+import { matchSorter } from "match-sorter";
+import { useTranslation } from "react-i18next";
 
 import useHideOnOutsideClick from "@hooks/useHideOnOutsideClick";
 

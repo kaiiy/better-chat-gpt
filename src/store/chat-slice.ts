@@ -1,5 +1,5 @@
-import { StoreSlice } from "./store";
 import { ChatInterface, FolderCollection, MessageInterface } from "@type/chat";
+import { StoreSlice } from "./store";
 
 export interface ChatSlice {
 	messages: MessageInterface[];

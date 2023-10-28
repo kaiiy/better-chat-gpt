@@ -1,6 +1,6 @@
-import React, { useState, useEffect, useCallback, useRef } from "react";
-import { useTranslation } from "react-i18next";
 import useStore from "@store/store";
+import React, { useCallback, useEffect, useRef, useState } from "react";
+import { useTranslation } from "react-i18next";
 
 import DownChevronArrow from "@icon/DownChevronArrow";
 import { ChatInterface, Role, roles } from "@type/chat";

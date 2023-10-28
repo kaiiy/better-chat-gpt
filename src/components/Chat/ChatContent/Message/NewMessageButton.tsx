@@ -1,10 +1,10 @@
-import React from "react";
 import useStore from "@store/store";
+import React from "react";
 
 import PlusIcon from "@icon/PlusIcon";
 
-import { ChatInterface } from "@type/chat";
 import { generateDefaultChat } from "@constants/chat";
+import { ChatInterface } from "@type/chat";
 
 const NewMessageButton = React.memo(
 	({ messageIndex }: { messageIndex: number }) => {

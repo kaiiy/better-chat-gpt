@@ -1,14 +1,6 @@
-import { v4 as uuidv4 } from "uuid";
-import { ChatInterface, ConfigInterface, ModelOptions } from "@type/chat";
 import useStore from "@store/store";
-
-const date = new Date();
-const dateString =
-	date.getFullYear() +
-	"-" +
-	("0" + (date.getMonth() + 1)).slice(-2) +
-	"-" +
-	("0" + date.getDate()).slice(-2);
+import { ChatInterface, ConfigInterface, ModelOptions } from "@type/chat";
+import { v4 as uuidv4 } from "uuid";
 
 // default system message obtained using the following method: https://twitter.com/DeminDimin/status/1619935545144279040
 export const _defaultSystemMessage =
@@ -24,7 +16,7 @@ export const modelOptions: ModelOptions[] = [
 	"gpt-4-32k",
 ];
 
-export const defaultModel = "gpt-3.5-turbo";
+export const defaultModel = "gpt-4";
 
 export const modelMaxToken = {
 	"gpt-3.5-turbo": 4096,

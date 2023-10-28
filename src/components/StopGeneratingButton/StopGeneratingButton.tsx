@@ -1,5 +1,5 @@
-import React from "react";
 import useStore from "@store/store";
+import React from "react";
 
 const StopGeneratingButton = () => {
 	const setGenerating = useStore((state) => state.setGenerating);

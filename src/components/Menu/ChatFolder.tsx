@@ -1,5 +1,5 @@
-import React, { useEffect, useRef, useState } from "react";
 import useStore from "@store/store";
+import React, { useEffect, useRef, useState } from "react";
 
 import DownChevronArrow from "@icon/DownChevronArrow";
 import FolderIcon from "@icon/FolderIcon";
@@ -9,14 +9,14 @@ import {
 	FolderCollection,
 } from "@type/chat";
 
+import ColorPaletteIcon from "@icon/ColorPaletteIcon";
+import CrossIcon from "@icon/CrossIcon";
+import DeleteIcon from "@icon/DeleteIcon";
+import EditIcon from "@icon/EditIcon";
+import RefreshIcon from "@icon/RefreshIcon";
+import TickIcon from "@icon/TickIcon";
 import ChatHistory from "./ChatHistory";
 import NewChat from "./NewChat";
-import EditIcon from "@icon/EditIcon";
-import DeleteIcon from "@icon/DeleteIcon";
-import CrossIcon from "@icon/CrossIcon";
-import TickIcon from "@icon/TickIcon";
-import ColorPaletteIcon from "@icon/ColorPaletteIcon";
-import RefreshIcon from "@icon/RefreshIcon";
 
 import { folderColorOptions } from "@constants/color";
 

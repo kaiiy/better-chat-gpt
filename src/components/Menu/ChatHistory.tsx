@@ -87,11 +87,13 @@ const ChatHistory = React.memo(
 
 		return (
 			<a
-				className={`${active ? ChatHistoryClass.active : ChatHistoryClass.normal
-					} ${generating
+				className={`${
+					active ? ChatHistoryClass.active : ChatHistoryClass.normal
+				} ${
+					generating
 						? "cursor-not-allowed opacity-40"
 						: "cursor-pointer opacity-100"
-					}`}
+				}`}
 				onClick={() => {
 					if (!generating) setCurrentChatIndex(chatIndex);
 				}}

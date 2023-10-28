@@ -1,5 +1,5 @@
-import React, { useEffect, useRef, useState } from "react";
 import useStore from "@store/store";
+import React, { useEffect, useRef, useState } from "react";
 import { shallow } from "zustand/shallow";
 
 import ChatFolder from "./ChatFolder";
@@ -7,8 +7,8 @@ import ChatHistory from "./ChatHistory";
 import ChatSearch from "./ChatSearch";
 
 import {
-	ChatHistoryInterface,
 	ChatHistoryFolderInterface,
+	ChatHistoryInterface,
 	ChatInterface,
 	FolderCollection,
 } from "@type/chat";

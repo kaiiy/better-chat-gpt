@@ -1,9 +1,9 @@
 import { StoreApi, create } from "zustand";
 import { persist } from "zustand/middleware";
-import { ChatSlice, createChatSlice } from "./chat-slice";
-import { InputSlice, createInputSlice } from "./input-slice";
 import { AuthSlice, createAuthSlice } from "./auth-slice";
+import { ChatSlice, createChatSlice } from "./chat-slice";
 import { ConfigSlice, createConfigSlice } from "./config-slice";
+import { InputSlice, createInputSlice } from "./input-slice";
 import { PromptSlice, createPromptSlice } from "./prompt-slice";
 import { ToastSlice, createToastSlice } from "./toast-slice";
 

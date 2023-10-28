@@ -1,10 +1,10 @@
-import React, { useEffect, useRef, useState } from "react";
-import useStore from "@store/store";
-import { useTranslation } from "react-i18next";
 import PopupModal from "@components/PopupModal";
-import { ConfigInterface, ModelOptions } from "@type/chat";
-import DownChevronArrow from "@icon/DownChevronArrow";
 import { modelMaxToken, modelOptions } from "@constants/chat";
+import DownChevronArrow from "@icon/DownChevronArrow";
+import useStore from "@store/store";
+import { ConfigInterface, ModelOptions } from "@type/chat";
+import React, { useEffect, useRef, useState } from "react";
+import { useTranslation } from "react-i18next";
 
 const ConfigMenu = ({
 	setIsModalOpen,

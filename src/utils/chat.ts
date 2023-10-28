@@ -1,5 +1,5 @@
-import html2canvas from "html2canvas";
 import { ChatInterface } from "@type/chat";
+import html2canvas from "html2canvas";
 
 // Function to convert HTML to an image using html2canvas
 export const htmlToImg = async (html: HTMLDivElement) => {
@@ -26,9 +26,9 @@ export const downloadImg = (imgData: string, fileName: string) => {
 // Function to convert a chat object to markdown format
 export const chatToMarkdown = (chat: ChatInterface) => {
 	let markdown = `# ${chat.title}\n\n`;
-	chat.messages.forEach((message) => {
+	for (const message of chat.messages) {
 		markdown += `### **${message.role}**:\n\n${message.content}\n\n---\n\n`;
-	});
+	}
 	return markdown;
 };
 

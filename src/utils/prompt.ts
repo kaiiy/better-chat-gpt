@@ -3,7 +3,7 @@ import { getToday } from "./date";
 
 import Papa from "papaparse";
 
-export const importPromptCSV = (csvString: string, header: boolean = true) => {
+export const importPromptCSV = (csvString: string, header = true) => {
 	const results = Papa.parse(csvString, {
 		header,
 		delimiter: ",",

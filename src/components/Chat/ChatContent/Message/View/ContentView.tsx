@@ -8,14 +8,14 @@ import React, {
 import ReactMarkdown from "react-markdown";
 import { CodeProps, ReactMarkdownProps } from "react-markdown/lib/ast-to-react";
 
-import rehypeKatex from "rehype-katex";
-import rehypeHighlight from "rehype-highlight";
-import remarkMath from "remark-math";
-import remarkGfm from "remark-gfm";
 import useStore from "@store/store";
+import rehypeHighlight from "rehype-highlight";
+import rehypeKatex from "rehype-katex";
+import remarkGfm from "remark-gfm";
+import remarkMath from "remark-math";
 
-import TickIcon from "@icon/TickIcon";
 import CrossIcon from "@icon/CrossIcon";
+import TickIcon from "@icon/TickIcon";
 
 import useSubmit from "@hooks/useSubmit";
 
@@ -23,13 +23,13 @@ import { ChatInterface } from "@type/chat";
 
 import { codeLanguageSubset } from "@constants/chat";
 
+import CopyButton from "./Button/CopyButton";
+import DeleteButton from "./Button/DeleteButton";
+import DownButton from "./Button/DownButton";
+import EditButton from "./Button/EditButton";
+import MarkdownModeButton from "./Button/MarkdownModeButton";
 import RefreshButton from "./Button/RefreshButton";
 import UpButton from "./Button/UpButton";
-import DownButton from "./Button/DownButton";
-import CopyButton from "./Button/CopyButton";
-import EditButton from "./Button/EditButton";
-import DeleteButton from "./Button/DeleteButton";
-import MarkdownModeButton from "./Button/MarkdownModeButton";
 
 import CodeBlock from "../CodeBlock";
 
