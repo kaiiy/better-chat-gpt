@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 
-import useInitialiseNewChat from "@hooks/useInitialiseNewChat";
+import useInitializeNewChat from "@hooks/useInitializeNewChat";
 
 import ChatIcon from "@icon/ChatIcon";
 import CrossIcon from "@icon/CrossIcon";
@@ -22,7 +22,7 @@ const ChatHistoryClass = {
 
 const ChatHistory = React.memo(
 	({ title, chatIndex }: { title: string; chatIndex: number }) => {
-		const initialiseNewChat = useInitialiseNewChat();
+		const InitializeNewChat = useInitializeNewChat();
 		const setCurrentChatIndex = useStore((state) => state.setCurrentChatIndex);
 		const setChats = useStore((state) => state.setChats);
 		const active = useStore((state) => state.currentChatIndex === chatIndex);
@@ -51,7 +51,7 @@ const ChatHistory = React.memo(
 				setCurrentChatIndex(0);
 				setChats(updatedChats);
 			} else {
-				initialiseNewChat();
+				InitializeNewChat();
 			}
 			setIsDelete(false);
 		};
@@ -87,13 +87,11 @@ const ChatHistory = React.memo(
 
 		return (
 			<a
-				className={`${
-					active ? ChatHistoryClass.active : ChatHistoryClass.normal
-				} ${
-					generating
+				className={`${active ? ChatHistoryClass.active : ChatHistoryClass.normal
+					} ${generating
 						? "cursor-not-allowed opacity-40"
 						: "cursor-pointer opacity-100"
-				}`}
+					}`}
 				onClick={() => {
 					if (!generating) setCurrentChatIndex(chatIndex);
 				}}

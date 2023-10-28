@@ -27,7 +27,7 @@ const PopupModal = ({
 	const { t } = useTranslation();
 
 	const _handleClose = () => {
-		handleClose && handleClose();
+		handleClose?.();
 		setIsModalOpen(false);
 	};
 
@@ -86,9 +86,10 @@ const PopupModal = ({
 						</div>
 					</div>
 				</div>
+				{/* biome-ignore lint/a11y/useKeyWithClickEvents: <explanation> */}
 				<div
 					className="bg-gray-800/90 absolute top-0 left-0 h-full w-full z-[-1]"
-					onClick={_handleBackdropClose}
+					onClick={() => _handleBackdropClose}
 				/>
 			</div>,
 			modalRoot,

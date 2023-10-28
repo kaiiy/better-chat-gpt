@@ -1,18 +1,18 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import useStore from "@store/store";
 import i18n from "./i18n";
 
 import Chat from "@components/Chat";
 import Menu from "@components/Menu";
 
-import useInitialiseNewChat from "@hooks/useInitialiseNewChat";
+import useInitializeNewChat from "@hooks/useInitializeNewChat";
 import { ChatInterface } from "@type/chat";
 import { Theme } from "@type/theme";
 import ApiPopup from "@components/ApiPopup";
 import Toast from "@components/Toast";
 
 function App() {
-	const initialiseNewChat = useInitialiseNewChat();
+	const initializeNewChat = useInitializeNewChat();
 	const setChats = useStore((state) => state.setChats);
 	const setTheme = useStore((state) => state.setTheme);
 	const setApiKey = useStore((state) => state.setApiKey);
@@ -51,11 +51,11 @@ function App() {
 					setChats(chats);
 					setCurrentChatIndex(0);
 				} else {
-					initialiseNewChat();
+					initializeNewChat();
 				}
 			} catch (e: unknown) {
 				console.log(e);
-				initialiseNewChat();
+				initializeNewChat();
 			}
 			localStorage.removeItem("chats");
 		} else {
@@ -63,7 +63,7 @@ function App() {
 			const chats = useStore.getState().chats;
 			const currentChatIndex = useStore.getState().currentChatIndex;
 			if (!chats || chats.length === 0) {
-				initialiseNewChat();
+				initializeNewChat();
 			}
 			if (
 				chats &&

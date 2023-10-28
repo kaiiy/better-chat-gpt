@@ -3,16 +3,16 @@ import useStore from "@store/store";
 import { MessageInterface } from "@type/chat";
 import { generateDefaultChat } from "@constants/chat";
 
-const useInitialiseNewChat = () => {
+const useInitializeNewChat = () => {
 	const setChats = useStore((state) => state.setChats);
 	const setCurrentChatIndex = useStore((state) => state.setCurrentChatIndex);
 
-	const initialiseNewChat = () => {
+	const InitializeNewChat = () => {
 		setChats([generateDefaultChat()]);
 		setCurrentChatIndex(0);
 	};
 
-	return initialiseNewChat;
+	return InitializeNewChat;
 };
 
-export default useInitialiseNewChat;
+export default useInitializeNewChat;

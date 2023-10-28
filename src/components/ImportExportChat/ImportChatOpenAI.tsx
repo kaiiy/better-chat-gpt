@@ -1,5 +1,4 @@
 import React, { useRef } from "react";
-import { useTranslation } from "react-i18next";
 
 import useStore from "@store/store";
 
@@ -12,8 +11,6 @@ const ImportChatOpenAI = ({
 }: {
 	setIsModalOpen: React.Dispatch<React.SetStateAction<boolean>>;
 }) => {
-	const { t } = useTranslation();
-
 	const inputRef = useRef<HTMLInputElement>(null);
 
 	const setToastStatus = useStore((state) => state.setToastStatus);
@@ -55,10 +52,10 @@ const ImportChatOpenAI = ({
 	return (
 		<>
 			<div className="text-lg font-bold text-gray-900 dark:text-gray-300 text-center mb-3">
-				{t("import")} OpenAI ChatGPT {t("export")}
+				Import OpenAI ChatGPT Export
 			</div>
 			<label className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">
-				{t("import")} (JSON)
+				Import (JSON)
 			</label>
 			<input
 				className="w-full text-sm file:p-2 text-gray-800 file:text-gray-700 dark:text-gray-300 dark:file:text-gray-200 rounded-md cursor-pointer focus:outline-none bg-gray-50 file:bg-gray-100 dark:bg-gray-800 dark:file:bg-gray-700 file:border-0 border border-gray-300 dark:border-gray-600 placeholder-gray-900 dark:placeholder-gray-300 file:cursor-pointer"
@@ -67,9 +64,10 @@ const ImportChatOpenAI = ({
 			/>
 			<button
 				className="btn btn-small btn-primary mt-3"
+				type="button"
 				onClick={handleFileUpload}
 			>
-				{t("import")}
+				Import
 			</button>
 		</>
 	);

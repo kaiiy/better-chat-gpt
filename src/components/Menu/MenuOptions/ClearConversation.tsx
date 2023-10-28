@@ -4,18 +4,18 @@ import useStore from "@store/store";
 
 import PopupModal from "@components/PopupModal";
 import DeleteIcon from "@icon/DeleteIcon";
-import useInitialiseNewChat from "@hooks/useInitialiseNewChat";
+import useInitializeNewChat from "@hooks/useInitializeNewChat";
 
 const ClearConversation = () => {
 	const { t } = useTranslation();
 
-	const initialiseNewChat = useInitialiseNewChat();
+	const InitializeNewChat = useInitializeNewChat();
 	const setFolders = useStore((state) => state.setFolders);
 	const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
 
 	const handleConfirm = () => {
 		setIsModalOpen(false);
-		initialiseNewChat();
+		InitializeNewChat();
 		setFolders({});
 	};
 
