@@ -31,7 +31,7 @@ const ThemeSwitcher = () => {
 			onClick={switchTheme}
 		>
 			{theme === "dark" ? <SunIcon /> : <MoonIcon />}
-			{t(getOppositeTheme(theme) + "Mode")}
+			{t(`${getOppositeTheme(theme)}Mode`)}
 		</button>
 	) : (
 		<></>

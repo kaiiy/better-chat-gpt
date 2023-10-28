@@ -135,7 +135,7 @@ const ChatHistoryList = () => {
 			const updatedChats: ChatInterface[] = JSON.parse(
 				JSON.stringify(useStore.getState().chats),
 			);
-			delete updatedChats[chatIndex].folder;
+			updatedChats[chatIndex].folder = undefined;
 			setChats(updatedChats);
 		}
 	};

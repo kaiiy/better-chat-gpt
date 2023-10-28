@@ -160,7 +160,7 @@ const DefaultSystemChat = ({
 				onInput={handleInput}
 				value={_systemMessage}
 				rows={1}
-			></textarea>
+			/>
 		</div>
 	);
 };

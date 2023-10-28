@@ -61,7 +61,7 @@ const ChatFolder = ({
 			JSON.stringify(useStore.getState().chats),
 		);
 		updatedChats.forEach((chat) => {
-			if (chat.folder === folderId) delete chat.folder;
+			if (chat.folder === folderId) chat.folder = undefined;
 		});
 		setChats(updatedChats);
 
@@ -79,7 +79,7 @@ const ChatFolder = ({
 			JSON.stringify(useStore.getState().folders),
 		);
 		if (_color) updatedFolders[folderId].color = _color;
-		else delete updatedFolders[folderId].color;
+		else updatedFolders[folderId].color = undefined;
 		setFolders(updatedFolders);
 		setShowPalette(false);
 	};
@@ -144,7 +144,7 @@ const ChatFolder = ({
 	};
 
 	useEffect(() => {
-		if (inputRef && inputRef.current) inputRef.current.focus();
+		if (inputRef?.current) inputRef.current.focus();
 	}, [isEdit]);
 
 	return (
@@ -239,7 +239,9 @@ const ChatFolder = ({
 												<button
 													key={c}
 													style={{ background: c }}
-													className={`hover:scale-90 transition-transform h-4 w-4 rounded-full`}
+													className={
+														"hover:scale-90 transition-transform h-4 w-4 rounded-full"
+													}
 													onClick={() => {
 														updateColor(c);
 													}}

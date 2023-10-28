@@ -82,7 +82,7 @@ const ChatHistory = React.memo(
 		};
 
 		useEffect(() => {
-			if (inputRef && inputRef.current) inputRef.current.focus();
+			if (inputRef?.current) inputRef.current.focus();
 		}, [isEdit]);
 
 		return (

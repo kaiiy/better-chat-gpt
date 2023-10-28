@@ -10,9 +10,10 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
-    "lint": "biome lint",
-    "fmt": "biome fmt",
-    "check": "knip"
+    "lint": "biome lint ./src",
+    "fmt": "biome fmt ./src",
+    "check": "knip",
+    "fix": "biome check --apply-unsafe ./src"
   },
   "dependencies": {
     "@dqbd/tiktoken": "^1.0.7",

@@ -38,7 +38,7 @@ const DownloadChat = React.memo(
 							<button
 								className="btn btn-neutral gap-2"
 								onClick={async () => {
-									if (saveRef && saveRef.current) {
+									if (saveRef?.current) {
 										const imgData = await htmlToImg(saveRef.current);
 										downloadImg(
 											imgData,
@@ -59,7 +59,7 @@ const DownloadChat = React.memo(
 							<button
 								className="btn btn-neutral gap-2"
 								onClick={async () => {
-									if (saveRef && saveRef.current) {
+									if (saveRef?.current) {
 										const chats = useStore.getState().chats;
 										if (chats) {
 											const markdown = chatToMarkdown(

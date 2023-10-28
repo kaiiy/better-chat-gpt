@@ -176,7 +176,7 @@ const ContentView = memo(
 const code = memo((props: CodeProps) => {
 	const { inline, className, children } = props;
 	const match = /language-(\w+)/.exec(className || "");
-	const lang = match && match[1];
+	const lang = match?.[1];
 
 	if (inline) {
 		return <code className={className}>{children}</code>;

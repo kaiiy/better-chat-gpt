@@ -45,7 +45,7 @@ const countTokens = (messages: MessageInterface[], model: ModelOptions) => {
 
 export const limitMessageTokens = (
 	messages: MessageInterface[],
-	limit = 4096,
+	limit: number,
 	model: ModelOptions,
 ): MessageInterface[] => {
 	const limitedMessages: MessageInterface[] = [];

@@ -31,7 +31,7 @@ const ApiMenu = ({
 			handleConfirm={handleSave}
 		>
 			<div className="p-6 border-b border-gray-200 dark:border-gray-600">
-				<label className="flex gap-2 text-gray-900 dark:text-gray-300 text-sm items-center mb-2"></label>
+				<label className="flex gap-2 text-gray-900 dark:text-gray-300 text-sm items-center mb-2" />
 				<div className="flex gap-2 items-center mb-6">
 					<div className="min-w-fit text-gray-900 dark:text-gray-300 text-sm">
 						API EntryPoint:

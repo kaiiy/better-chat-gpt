@@ -133,7 +133,7 @@ const EditView = ({
 					placeholder={t("submitPlaceholder") as string}
 					onKeyDown={handleKeyDown}
 					rows={1}
-				></textarea>
+				/>
 			</div>
 			<EditViewButtons
 				sticky={sticky}
