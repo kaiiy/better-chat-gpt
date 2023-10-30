@@ -2531,14 +2531,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react@npm:=18.2.14":
-  version: 18.2.14
-  resolution: "@types/react@npm:18.2.14"
+"@types/react@npm:^18.2.33":
+  version: 18.2.33
+  resolution: "@types/react@npm:18.2.33"
   dependencies:
     "@types/prop-types": "npm:*"
     "@types/scheduler": "npm:*"
     csstype: "npm:^3.0.2"
-  checksum: a728a90e242fb41c233729fa46885cc47aca7df2035ed803f83bf0b582dde81143d465ecbf04a056bc6404f0f746f219d7043245ebd99baf83a178bbbb856c76
+  checksum: d3392785660d78121541403a5d1da57dc79e8ce402769251a626aa06a6886a6aaead868a01ee473661380ddd4ac79743de78853d69f652544da191d435f78afb
   languageName: node
   linkType: hard
 
@@ -2901,7 +2901,7 @@ __metadata:
     "@dqbd/tiktoken": "npm:^1.0.7"
     "@tailwindcss/typography": "npm:^0.5.10"
     "@types/papaparse": "npm:^5.3.10"
-    "@types/react": "npm:=18.2.14"
+    "@types/react": "npm:^18.2.33"
     "@types/react-dom": "npm:^18.2.14"
     "@types/react-scroll-to-bottom": "npm:^4.2.3"
     "@types/uuid": "npm:^9.0.6"
