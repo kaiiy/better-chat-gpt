@@ -1,6 +1,6 @@
-import { useEffect, useState } from "react";
 import useStore from "@store/store";
-import { useTranslation, Trans } from "react-i18next";
+import { useEffect, useState } from "react";
+import { Trans, useTranslation } from "react-i18next";
 
 import PopupModal from "@components/PopupModal";
 import CrossIcon from "@icon/CrossIcon";

@@ -1,6 +1,6 @@
 import Toggle from "@components/Toggle";
 import useStore from "@store/store";
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 
 const AutoTitleToggle = () => {

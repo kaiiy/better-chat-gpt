@@ -90,6 +90,7 @@ const DownloadChat = React.memo(
 									const chats = useStore.getState().chats;
 									if (chats) {
 										const chat = chats[useStore.getState().currentChatIndex];
+										// underscore separated filename
 										const filename = chat.title.replaceAll(" ", "_");
 										downloadFile([chat], filename);
 									}

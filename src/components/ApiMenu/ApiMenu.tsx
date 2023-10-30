@@ -3,7 +3,7 @@ import React, { useState } from "react";
 
 import PopupModal from "@components/PopupModal";
 
-import { officialAPIEndpoint } from "@constants/auth";
+import { ApiEndpoint } from "@constants/auth";
 
 const ApiMenu = ({
 	setIsModalOpen,
@@ -12,11 +12,10 @@ const ApiMenu = ({
 }) => {
 	const apiKey = useStore((state) => state.apiKey);
 	const setApiKey = useStore((state) => state.setApiKey);
-	const apiEndpoint = useStore((state) => state.apiEndpoint);
 	const setApiEndpoint = useStore((state) => state.setApiEndpoint);
 
 	const [_apiKey, _setApiKey] = useState<string>(apiKey || "");
-	const _apiEndpoint = officialAPIEndpoint;
+	const _apiEndpoint = ApiEndpoint;
 
 	const handleSave = () => {
 		setApiKey(_apiKey);

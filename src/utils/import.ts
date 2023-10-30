@@ -14,7 +14,9 @@ import {
 import { roles } from "@type/chat";
 import { ExportV1, OpenAIChat } from "@type/export";
 
-export const validateAndFixChats = (chats: unknown): chats is ChatInterface[] => {
+export const validateAndFixChats = (
+	chats: unknown,
+): chats is ChatInterface[] => {
 	if (!Array.isArray(chats)) return false;
 
 	for (const chat of chats) {

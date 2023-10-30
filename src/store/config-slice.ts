@@ -30,7 +30,7 @@ export interface ConfigSlice {
 	setTotalTokenUsed: (totalTokenUsed: TotalTokenUsed) => void;
 }
 
-export const createConfigSlice: StoreSlice<ConfigSlice> = (set, get) => ({
+export const createConfigSlice: StoreSlice<ConfigSlice> = (set, _) => ({
 	openConfig: false,
 	theme: "dark",
 	hideMenuOptions: false,

@@ -3,8 +3,7 @@ import { ChatInterface, ConfigInterface, ModelOptions } from "@type/chat";
 import { v4 as uuidv4 } from "uuid";
 
 // default system message obtained using the following method: https://twitter.com/DeminDimin/status/1619935545144279040
-export const _defaultSystemMessage =
-	`You are ChatGPT, a large language model trained by OpenAI.
+export const _defaultSystemMessage = `You are ChatGPT, a large language model trained by OpenAI.
 Carefully heed the user's instructions. 
 Respond using Markdown.`;
 

@@ -3,17 +3,13 @@ import { modelMaxToken, modelOptions } from "@constants/chat";
 import DownChevronArrow from "@icon/DownChevronArrow";
 import { ConfigInterface, ModelOptions } from "@type/chat";
 import React, { useEffect, useRef, useState } from "react";
-import { useTranslation } from "react-i18next";
 
-const ConfigMenu = ({
-	setIsModalOpen,
-	config,
-	setConfig,
-}: {
+interface ConfigMenuProps {
 	setIsModalOpen: React.Dispatch<React.SetStateAction<boolean>>;
 	config: ConfigInterface;
 	setConfig: (config: ConfigInterface) => void;
-}) => {
+}
+const ConfigMenu = ({ setIsModalOpen, config, setConfig }: ConfigMenuProps) => {
 	const [_maxToken, _setMaxToken] = useState<number>(config.max_tokens);
 	const [_model, _setModel] = useState<ModelOptions>(config.model);
 	const [_temperature, _setTemperature] = useState<number>(config.temperature);
@@ -24,7 +20,6 @@ const ConfigMenu = ({
 	const [_frequencyPenalty, _setFrequencyPenalty] = useState<number>(
 		config.frequency_penalty,
 	);
-	const { t } = useTranslation("model");
 
 	const handleConfirm = () => {
 		setConfig({
@@ -40,7 +35,7 @@ const ConfigMenu = ({
 
 	return (
 		<PopupModal
-			title={t("configuration") as string}
+			title={"Configuration"}
 			setIsModalOpen={setIsModalOpen}
 			handleConfirm={handleConfirm}
 			handleClickBackdrop={handleConfirm}
@@ -70,13 +65,11 @@ const ConfigMenu = ({
 	);
 };
 
-export const ModelSelector = ({
-	_model,
-	_setModel,
-}: {
+interface ModelSelectorProps {
 	_model: ModelOptions;
 	_setModel: React.Dispatch<React.SetStateAction<ModelOptions>>;
-}) => {
+}
+export const ModelSelector = ({ _model, _setModel }: ModelSelectorProps) => {
 	const [dropDown, setDropDown] = useState<boolean>(false);
 
 	return (
@@ -91,8 +84,9 @@ export const ModelSelector = ({
 			</button>
 			<div
 				id="dropdown"
-				className={`${dropDown ? "" : "hidden"
-					} absolute top-100 bottom-100 z-10 bg-white rounded-lg shadow-xl border-b border-black/10 dark:border-gray-900/50 text-gray-800 dark:text-gray-100 group dark:bg-gray-800 opacity-90`}
+				className={`${
+					dropDown ? "" : "hidden"
+				} absolute top-100 bottom-100 z-10 bg-white rounded-lg shadow-xl border-b border-black/10 dark:border-gray-900/50 text-gray-800 dark:text-gray-100 group dark:bg-gray-800 opacity-90`}
 			>
 				<ul
 					className="text-sm text-gray-700 dark:text-gray-200 p-0 m-0"
@@ -116,16 +110,16 @@ export const ModelSelector = ({
 	);
 };
 
+interface MaxTokenSliderProps {
+	_maxToken: number;
+	_setMaxToken: React.Dispatch<React.SetStateAction<number>>;
+	_model: ModelOptions;
+}
 export const MaxTokenSlider = ({
 	_maxToken,
 	_setMaxToken,
 	_model,
-}: {
-	_maxToken: number;
-	_setMaxToken: React.Dispatch<React.SetStateAction<number>>;
-	_model: ModelOptions;
-}) => {
-	const { t } = useTranslation("model");
+}: MaxTokenSliderProps) => {
 	const inputRef = useRef<HTMLInputElement>(null);
 
 	useEffect(() => {
@@ -135,7 +129,7 @@ export const MaxTokenSlider = ({
 	return (
 		<div>
 			<label className="block text-sm font-medium text-gray-900 dark:text-white">
-				{t("token.label")}: {_maxToken}
+				Max Token: {_maxToken}
 			</label>
 			<input
 				type="range"
@@ -150,7 +144,9 @@ export const MaxTokenSlider = ({
 				className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer"
 			/>
 			<div className="min-w-fit text-gray-500 dark:text-gray-300 text-sm mt-2">
-				{t("token.description")}
+				The maximum number of tokens to generate in the chat completion. The
+				total length of input tokens and generated tokens is limited by the
+				model's context length.
 			</div>
 		</div>
 	);
@@ -163,12 +159,10 @@ export const TemperatureSlider = ({
 	_temperature: number;
 	_setTemperature: React.Dispatch<React.SetStateAction<number>>;
 }) => {
-	const { t } = useTranslation("model");
-
 	return (
 		<div className="mt-5 pt-5 border-t border-gray-500">
 			<label className="block text-sm font-medium text-gray-900 dark:text-white">
-				{t("temperature.label")}: {_temperature}
+				Temperature: {_temperature}
 			</label>
 			<input
 				id="default-range"
@@ -183,7 +177,10 @@ export const TemperatureSlider = ({
 				className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer"
 			/>
 			<div className="min-w-fit text-gray-500 dark:text-gray-300 text-sm mt-2">
-				{t("temperature.description")}
+				What sampling temperature to use, between 0 and 2. Higher values like
+				0.8 will make the output more random, while lower values like 0.2 will
+				make it more focused and deterministic. We generally recommend altering
+				this or top p but not both. (Default: 1)
 			</div>
 		</div>
 	);
@@ -196,12 +193,10 @@ export const TopPSlider = ({
 	_topP: number;
 	_setTopP: React.Dispatch<React.SetStateAction<number>>;
 }) => {
-	const { t } = useTranslation("model");
-
 	return (
 		<div className="mt-5 pt-5 border-t border-gray-500">
 			<label className="block text-sm font-medium text-gray-900 dark:text-white">
-				{t("topP.label")}: {_topP}
+				Top-p: {_topP}
 			</label>
 			<input
 				id="default-range"
@@ -216,7 +211,11 @@ export const TopPSlider = ({
 				className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer"
 			/>
 			<div className="min-w-fit text-gray-500 dark:text-gray-300 text-sm mt-2">
-				{t("topP.description")}
+				Number between 0 and 1. An alternative to sampling with temperature,
+				called nucleus sampling, where the model considers the results of the
+				tokens with top p probability mass. So 0.1 means only the tokens
+				comprising the top 10% probability mass are considered. We generally
+				recommend altering this or temperature but not both. (Default: 1)
 			</div>
 		</div>
 	);
@@ -229,12 +228,10 @@ export const PresencePenaltySlider = ({
 	_presencePenalty: number;
 	_setPresencePenalty: React.Dispatch<React.SetStateAction<number>>;
 }) => {
-	const { t } = useTranslation("model");
-
 	return (
 		<div className="mt-5 pt-5 border-t border-gray-500">
 			<label className="block text-sm font-medium text-gray-900 dark:text-white">
-				{t("presencePenalty.label")}: {_presencePenalty}
+				Presence Penalty: {_presencePenalty}
 			</label>
 			<input
 				id="default-range"
@@ -249,7 +246,9 @@ export const PresencePenaltySlider = ({
 				className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer"
 			/>
 			<div className="min-w-fit text-gray-500 dark:text-gray-300 text-sm mt-2">
-				{t("presencePenalty.description")}
+				Number between -2.0 and 2.0. Positive values penalize new tokens based
+				on whether they appear in the text so far, increasing the model's
+				likelihood to talk about new topics. (Default: 0)
 			</div>
 		</div>
 	);
@@ -262,12 +261,10 @@ export const FrequencyPenaltySlider = ({
 	_frequencyPenalty: number;
 	_setFrequencyPenalty: React.Dispatch<React.SetStateAction<number>>;
 }) => {
-	const { t } = useTranslation("model");
-
 	return (
 		<div className="mt-5 pt-5 border-t border-gray-500">
 			<label className="block text-sm font-medium text-gray-900 dark:text-white">
-				{t("frequencyPenalty.label")}: {_frequencyPenalty}
+				Frequency Penalty: {_frequencyPenalty}
 			</label>
 			<input
 				id="default-range"
@@ -282,7 +279,9 @@ export const FrequencyPenaltySlider = ({
 				className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer"
 			/>
 			<div className="min-w-fit text-gray-500 dark:text-gray-300 text-sm mt-2">
-				{t("frequencyPenalty.description")}
+				Number between -2.0 and 2.0. Positive values penalize new tokens based
+				on their existing frequency in the text so far, decreasing the model's
+				likelihood to repeat the same line verbatim. (Default: 0)
 			</div>
 		</div>
 	);

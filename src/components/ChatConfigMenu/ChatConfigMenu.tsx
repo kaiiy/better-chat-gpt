@@ -1,6 +1,5 @@
 import useStore from "@store/store";
 import React, { useState } from "react";
-import { useTranslation } from "react-i18next";
 
 import {
 	FrequencyPenaltySlider,
@@ -16,7 +15,6 @@ import { _defaultChatConfig, _defaultSystemMessage } from "@constants/chat";
 import { ModelOptions } from "@type/chat";
 
 const ChatConfigMenu = () => {
-	const { t } = useTranslation("model");
 	const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
 	return (
 		<div>
@@ -25,7 +23,7 @@ const ChatConfigMenu = () => {
 				className="btn btn-neutral"
 				onClick={() => setIsModalOpen(true)}
 			>
-				{t("defaultChatConfig")}
+				Default Chat Config
 			</button>
 			{isModalOpen && <ChatConfigPopup setIsModalOpen={setIsModalOpen} />}
 		</div>
@@ -57,8 +55,6 @@ const ChatConfigPopup = ({
 		config.frequency_penalty,
 	);
 
-	const { t } = useTranslation("model");
-
 	const handleSave = () => {
 		setDefaultChatConfig({
 			model: _model,
@@ -84,7 +80,7 @@ const ChatConfigPopup = ({
 
 	return (
 		<PopupModal
-			title={t("defaultChatConfig") as string}
+			title={"Default Chat Config"}
 			setIsModalOpen={setIsModalOpen}
 			handleConfirm={handleSave}
 		>
@@ -116,7 +112,7 @@ const ChatConfigPopup = ({
 					className="btn btn-neutral cursor-pointer mt-5"
 					onClick={handleReset}
 				>
-					{t("resetToDefault")}
+					Reset to Default
 				</div>
 			</div>
 		</PopupModal>
@@ -130,8 +126,6 @@ const DefaultSystemChat = ({
 	_systemMessage: string;
 	_setSystemMessage: React.Dispatch<React.SetStateAction<string>>;
 }) => {
-	const { t } = useTranslation("model");
-
 	const handleInput = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
 		e.target.style.height = "auto";
 		e.target.style.height = `${e.target.scrollHeight}px`;
@@ -152,7 +146,7 @@ const DefaultSystemChat = ({
 	return (
 		<div>
 			<div className="block text-sm font-medium text-gray-900 dark:text-white">
-				{t("defaultSystemMessage")}
+				Default System Message
 			</div>
 			<textarea
 				className="my-2 mx-0 px-2 resize-none rounded-lg bg-transparent overflow-y-hidden leading-7 p-1 border border-gray-400/50 focus:ring-1 focus:ring-blue w-full max-h-10 transition-all"

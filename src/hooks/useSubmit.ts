@@ -1,54 +1,19 @@
-import { getChatCompletion, getChatCompletionStream } from "@api/api";
+import { getChatCompletionStream } from "@api/api";
 import { parseEventSource } from "@api/helper";
-import { officialAPIEndpoint } from "@constants/auth";
 import { _defaultChatConfig } from "@constants/chat";
 import useStore from "@store/store";
 import { ChatInterface, MessageInterface } from "@type/chat";
+import { generateTitle } from "@utils/chatTitle";
 import { limitMessageTokens, updateTotalTokenUsed } from "@utils/messageUtils";
-import { useTranslation } from "react-i18next";
 
 const useSubmit = () => {
-	const { t, i18n } = useTranslation("api");
 	const error = useStore((state) => state.error);
 	const setError = useStore((state) => state.setError);
-	const apiEndpoint = useStore((state) => state.apiEndpoint);
 	const apiKey = useStore((state) => state.apiKey);
 	const setGenerating = useStore((state) => state.setGenerating);
 	const generating = useStore((state) => state.generating);
 	const currentChatIndex = useStore((state) => state.currentChatIndex);
 	const setChats = useStore((state) => state.setChats);
-
-	const generateTitle = async (
-		message: MessageInterface[],
-	): Promise<string> => {
-		let data;
-		try {
-			if (!apiKey || apiKey.length === 0) {
-				// official endpoint
-				if (apiEndpoint === officialAPIEndpoint) {
-					throw new Error(t("noApiKeyWarning") as string);
-				}
-
-				// other endpoints
-				data = await getChatCompletion(
-					useStore.getState().apiEndpoint,
-					message,
-					_defaultChatConfig,
-				);
-			} else if (apiKey) {
-				// own apikey
-				data = await getChatCompletion(
-					useStore.getState().apiEndpoint,
-					message,
-					_defaultChatConfig,
-					apiKey,
-				);
-			}
-		} catch (error: unknown) {
-			throw new Error(`Error generating title!\n${(error as Error).message}`);
-		}
-		return data.choices[0].message.content;
-	};
 
 	const handleSubmit = async () => {
 		const chats = useStore.getState().chats;
@@ -65,7 +30,7 @@ const useSubmit = () => {
 		setGenerating(true);
 
 		try {
-			let stream;
+			let stream = null;
 			if (chats[currentChatIndex].messages.length === 0)
 				throw new Error("No messages submitted!");
 
@@ -78,19 +43,8 @@ const useSubmit = () => {
 
 			// no api key (free)
 			if (!apiKey || apiKey.length === 0) {
-				// official endpoint
-				if (apiEndpoint === officialAPIEndpoint) {
-					throw new Error(t("noApiKeyWarning") as string);
-				}
-
-				// other endpoints
-				stream = await getChatCompletionStream(
-					useStore.getState().apiEndpoint,
-					messages,
-					chats[currentChatIndex].config,
-				);
-			} else if (apiKey) {
-				// own apikey
+				throw new Error("No API key supplied! Please check your API settings.");
+			} else if (apiKey.length > 0) {
 				stream = await getChatCompletionStream(
 					useStore.getState().apiEndpoint,
 					messages,
@@ -99,7 +53,7 @@ const useSubmit = () => {
 				);
 			}
 
-			if (stream) {
+			if (stream !== null) {
 				if (stream.locked)
 					throw new Error(
 						"Oops, the stream is locked right now. Please try again",
@@ -162,7 +116,7 @@ const useSubmit = () => {
 			// generate title for new chats
 			if (
 				useStore.getState().autoTitle &&
-				currChats &&
+				currChats !== undefined &&
 				!currChats[currentChatIndex]?.titleSet
 			) {
 				const messages_length = currChats[currentChatIndex].messages.length;
@@ -173,13 +127,13 @@ const useSubmit = () => {
 
 				const message: MessageInterface = {
 					role: "user",
-					content: `Generate a title in less than 6 words for the following message (language: ${i18n.language}):\n"""\nUser: ${user_message}\nAssistant: ${assistant_message}\n"""`,
+					content: `Generate a title in less than 6 words for the following message (language: English):\n"""\nUser: ${user_message}\nAssistant: ${assistant_message}\n"""`,
 				};
 
-				let title = (await generateTitle([message])).trim();
-				if (title.startsWith('"') && title.endsWith('"')) {
-					title = title.slice(1, -1);
-				}
+				const title = await generateTitle({
+					message: [message],
+					apiKey,
+				});
 				const updatedChats: ChatInterface[] = JSON.parse(
 					JSON.stringify(useStore.getState().chats),
 				);

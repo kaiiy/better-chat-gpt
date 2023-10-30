@@ -11,7 +11,7 @@
     "build": "tsc && vite build",
     "preview": "vite preview",
     "lint": "biome lint ./src",
-    "fmt": "biome fmt ./src",
+    "fmt": "biome format --write ./src",
     "check": "knip",
     "fix": "biome check --apply-unsafe ./src"
   },
@@ -58,7 +58,7 @@
   },
   "volta": {
     "node": "20.9.0",
-    "yarn": "4.0.0"
+    "yarn": "4.0.1"
   },
   "packageManager": "yarn@4.0.0"
 }
