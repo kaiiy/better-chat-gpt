@@ -3,6 +3,17 @@ import ReactDOM from "react-dom";
 
 import CrossIcon2 from "@icon/CrossIcon2";
 
+interface PopupModalProps {
+	title?: string;
+	message?: string;
+	setIsModalOpen: React.Dispatch<React.SetStateAction<boolean>>;
+	handleConfirm?: () => void;
+	handleClose?: () => void;
+	handleClickBackdrop?: () => void;
+	cancelButton?: boolean;
+	children?: React.ReactElement;
+}
+
 const PopupModal = ({
 	title = "Information",
 	message,
@@ -12,16 +23,7 @@ const PopupModal = ({
 	handleClickBackdrop,
 	cancelButton = true,
 	children,
-}: {
-	title?: string;
-	message?: string;
-	setIsModalOpen: React.Dispatch<React.SetStateAction<boolean>>;
-	handleConfirm?: () => void;
-	handleClose?: () => void;
-	handleClickBackdrop?: () => void;
-	cancelButton?: boolean;
-	children?: React.ReactElement;
-}) => {
+}: PopupModalProps) => {
 	const modalRoot = document.getElementById("modal-root");
 
 	const _handleClose = () => {
@@ -34,7 +36,7 @@ const PopupModal = ({
 		else _handleClose();
 	};
 
-	if (modalRoot) {
+	if (modalRoot !== null) {
 		return ReactDOM.createPortal(
 			<div className="fixed top-0 left-0 z-[999] w-full p-4 overflow-x-hidden overflow-y-auto h-full flex justify-center items-center">
 				<div className="relative z-2 max-w-2xl md:h-auto flex justify-center max-h-full">
@@ -92,7 +94,7 @@ const PopupModal = ({
 			modalRoot,
 		);
 	} else {
-		return null;
+		throw new Error("modal-root not found");
 	}
 };
 
