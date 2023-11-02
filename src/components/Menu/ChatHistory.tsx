@@ -75,18 +75,13 @@ const ChatHistory = React.memo(
 			setIsEdit(false);
 		};
 
-		const handleDragStart = (e: React.DragEvent<HTMLAnchorElement>) => {
-			if (e.dataTransfer) {
-				e.dataTransfer.setData("chatIndex", String(chatIndex));
-			}
-		};
-
 		useEffect(() => {
 			if (inputRef?.current) inputRef.current.focus();
 		}, [isEdit]);
 
 		return (
-			<a
+			<button
+				type="button"
 				className={`${
 					active ? ChatHistoryClass.active : ChatHistoryClass.normal
 				} ${
@@ -97,8 +92,6 @@ const ChatHistory = React.memo(
 				onClick={() => {
 					if (!generating) setCurrentChatIndex(chatIndex);
 				}}
-				draggable
-				onDragStart={handleDragStart}
 			>
 				<ChatIcon />
 				<div className="flex-1 text-ellipsis max-h-5 overflow-hidden break-all relative">
@@ -166,7 +159,7 @@ const ChatHistory = React.memo(
 						)}
 					</div>
 				)}
-			</a>
+			</button>
 		);
 	},
 );

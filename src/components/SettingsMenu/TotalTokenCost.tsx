@@ -128,10 +128,13 @@ export const TotalTokenCostDisplay = () => {
 	}, [totalTokenUsed]);
 
 	return (
-		<a className="flex py-2 px-2 items-center gap-3 rounded-md hover:bg-gray-500/10 transition-colors duration-200 text-white text-sm">
+		<button
+			type="button"
+			className="flex py-2 px-2 items-center gap-3 rounded-md transition-colors duration-200 text-white text-sm cursor-default"
+		>
 			<CalculatorIcon />
 			{`USD ${totalCost.toPrecision(3)}`}
-		</a>
+		</button>
 	);
 };
 

@@ -1,13 +1,10 @@
 import useStore from "@store/store";
 import { useEffect, useState } from "react";
-import { Trans, useTranslation } from "react-i18next";
 
 import PopupModal from "@components/PopupModal";
 import CrossIcon from "@icon/CrossIcon";
 
 const ApiPopup = () => {
-	const { t } = useTranslation(["main", "api"]);
-
 	const apiKey = useStore((state) => state.apiKey);
 	const setApiKey = useStore((state) => state.setApiKey);
 	const firstVisit = useStore((state) => state.firstVisit);
@@ -21,7 +18,7 @@ const ApiPopup = () => {
 
 	const handleConfirm = () => {
 		if (_apiKey.length === 0) {
-			setError(t("noApiKeyWarning", { ns: "api" }) as string);
+			setError("No API key supplied! Please check your API settings.");
 		} else {
 			setError("");
 			setApiKey(_apiKey);
@@ -43,7 +40,7 @@ const ApiPopup = () => {
 			<div className="p-6 border-b border-gray-200 dark:border-gray-600">
 				<div className="flex gap-2 items-center justify-center mt-2">
 					<div className="min-w-fit text-gray-900 dark:text-gray-300 text-sm">
-						{t("apiKey.inputLabel", { ns: "api" })}
+						{"API Endpoint"}
 					</div>
 					<input
 						type="text"
@@ -56,37 +53,9 @@ const ApiPopup = () => {
 				</div>
 
 				<div className="min-w-fit text-gray-900 dark:text-gray-300 text-sm mt-4">
-					<Trans
-						i18nKey="apiKey.howTo"
-						ns="api"
-						components={[
-							<a
-								href="https://platform.openai.com/account/api-keys"
-								className="link"
-								target="_blank"
-								rel="noreferrer"
-							/>,
-						]}
-					/>
-				</div>
-				<div className="min-w-fit text-gray-900 dark:text-gray-300 text-sm mt-4">
-					<Trans
-						i18nKey="advancedConfig"
-						ns="api"
-						components={[
-							<a
-								className="link cursor-pointer"
-								onClick={() => {
-									setIsModalOpen(false);
-									document.getElementById("api-menu")?.click();
-								}}
-							/>,
-						]}
-					/>
-				</div>
-
-				<div className="min-w-fit text-gray-900 dark:text-gray-300 text-sm mt-4">
-					{t("securityMessage", { ns: "api" })}
+					{
+						"We prioritize your API key's security and handle it with great care. We store your key exclusively on your browser and never share it with anyone else. We only use it for accessing the OpenAI API as intended and not for any unauthorized purposes."
+					}
 				</div>
 
 				{error.length > 0 && (
