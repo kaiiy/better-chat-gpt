@@ -21,8 +21,6 @@ import useSubmit from "@hooks/useSubmit";
 
 import { ChatInterface } from "@type/chat";
 
-import { codeLanguageSubset } from "@constants/chat";
-
 import CopyButton from "./Button/CopyButton";
 import DeleteButton from "./Button/DeleteButton";
 import DownButton from "./Button/DownButton";
@@ -119,7 +117,6 @@ const ContentView = memo(
 									{
 										detect: true,
 										ignoreMissing: true,
-										subset: codeLanguageSubset,
 									},
 								],
 							]}
