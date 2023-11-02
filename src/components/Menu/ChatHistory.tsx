@@ -13,7 +13,7 @@ const ChatHistoryClass = {
 	normal:
 		"flex py-2 px-2 items-center gap-3 relative rounded-md bg-gray-900 hover:bg-gray-850 break-all hover:pr-4 group transition-opacity",
 	active:
-		"flex py-2 px-2 items-center gap-3 relative rounded-md break-all pr-14 bg-gray-800 hover:bg-gray-800 group transition-opacity",
+		"flex py-2 px-2 items-center gap-3 relative rounded-md break-all bg-gray-800 hover:bg-gray-800 group transition-opacity",
 	normalGradient:
 		"absolute inset-y-0 right-0 w-8 z-10 bg-gradient-to-l from-gray-900 group-hover:from-gray-850",
 	activeGradient:
