@@ -1,14 +1,11 @@
 import useStore from "@store/store";
 import React, { useState } from "react";
-import { useTranslation } from "react-i18next";
 
 import { ChatInterface } from "@type/chat";
 
 import TickIcon from "@icon/TickIcon";
 
 const CloneChat = React.memo(() => {
-	const { t } = useTranslation();
-
 	const setChats = useStore((state) => state.setChats);
 	const setCurrentChatIndex = useStore((state) => state.setCurrentChatIndex);
 
@@ -51,10 +48,10 @@ const CloneChat = React.memo(() => {
 		>
 			{cloned ? (
 				<>
-					<TickIcon /> {t("cloned")}
+					<TickIcon /> Cloned
 				</>
 			) : (
-				<>{t("cloneChat")}</>
+				<>Clone Chat</>
 			)}
 		</button>
 	);

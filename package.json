@@ -13,7 +13,8 @@
     "lint": "biome lint ./src",
     "fmt": "biome format --write ./src",
     "check": "knip",
-    "fix": "biome check --apply-unsafe ./src"
+    "fix": "biome check --apply-unsafe ./src",
+    "all": "yarn lint && yarn fmt && yarn check && yarn build"
   },
   "dependencies": {
     "@dqbd/tiktoken": "^1.0.7",

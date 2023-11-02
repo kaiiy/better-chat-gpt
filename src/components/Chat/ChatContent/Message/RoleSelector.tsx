@@ -1,5 +1,5 @@
 import useStore from "@store/store";
-import React, { useCallback, useEffect, useRef, useState } from "react";
+import React from "react";
 import { useTranslation } from "react-i18next";
 
 import DownChevronArrow from "@icon/DownChevronArrow";

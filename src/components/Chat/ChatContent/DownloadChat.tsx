@@ -10,13 +10,11 @@ import {
 	htmlToImg,
 } from "@utils/chat";
 import React, { useState } from "react";
-import { useTranslation } from "react-i18next";
 
 import downloadFile from "@utils/downloadFile";
 
 const DownloadChat = React.memo(
 	({ saveRef }: { saveRef: React.RefObject<HTMLDivElement> }) => {
-		const { t } = useTranslation();
 		const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
 		return (
 			<>
@@ -27,12 +25,12 @@ const DownloadChat = React.memo(
 						setIsModalOpen(true);
 					}}
 				>
-					{t("downloadChat")}
+					Download Chat
 				</button>
 				{isModalOpen && (
 					<PopupModal
 						setIsModalOpen={setIsModalOpen}
-						title={t("downloadChat") as string}
+						title={"Download Chat"}
 						cancelButton={false}
 					>
 						<div className="p-6 border-b border-gray-200 dark:border-gray-600 flex gap-4">
