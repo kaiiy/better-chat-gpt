@@ -2963,7 +2963,7 @@ __metadata:
     react-scroll-to-bottom: "npm:^4.2.0"
     rehype-highlight: "npm:^6.0.0"
     rehype-katex: "npm:~6.0.3"
-    remark-gfm: "npm:^3.0.0"
+    remark-gfm: "npm:^3.0.1"
     remark-math: "npm:^6.0.0"
     tailwindcss: "npm:^3.3.5"
     typescript: "npm:^5.2.2"
@@ -7156,7 +7156,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"remark-gfm@npm:^3.0.0":
+"remark-gfm@npm:^3.0.1":
   version: 3.0.1
   resolution: "remark-gfm@npm:3.0.1"
   dependencies:
