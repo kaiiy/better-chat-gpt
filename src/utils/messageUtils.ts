@@ -1,3 +1,4 @@
+import { defaultGPT3Model } from "@constants/chat";
 import { MessageInterface, ModelOptions, TotalTokenUsed } from "@type/chat";
 
 import useStore from "@store/store";
@@ -21,7 +22,7 @@ const getChatGPTEncoding = (
 	messages: MessageInterface[],
 	model: ModelOptions,
 ) => {
-	const isGpt3 = model === "gpt-3.5-turbo";
+	const isGpt3 = model === defaultGPT3Model;
 
 	const msgSep = isGpt3 ? "\n" : "";
 	const roleSep = isGpt3 ? "\n" : "<|im_sep|>";

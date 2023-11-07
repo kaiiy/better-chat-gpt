@@ -1,11 +1,11 @@
 import { getChatCompletion } from "@api/api";
-import { _defaultChatConfig } from "@constants/chat";
+import { _defaultChatConfig, defaultGPT3Model } from "@constants/chat";
 import useStore from "@store/store";
 import { MessageInterface } from "@type/chat";
 
 const generateTitleChatConfig = () => {
 	const config = _defaultChatConfig;
-	config.model = "gpt-3.5-turbo";
+	config.model = defaultGPT3Model;
 	return config;
 };
 const titleChatConfig = generateTitleChatConfig();

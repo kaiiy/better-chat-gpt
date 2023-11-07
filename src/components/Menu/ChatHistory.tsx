@@ -63,7 +63,7 @@ const ChatHistory = React.memo(
 			}
 		};
 
-		const handleTick = (e: React.MouseEvent<HTMLButtonElement>) => {
+		const handleTick = (e: React.MouseEvent<HTMLDivElement>) => {
 			e.stopPropagation();
 
 			if (isEdit) editTitle();
@@ -124,37 +124,37 @@ const ChatHistory = React.memo(
 					<div className="absolute flex right-1 z-10 text-gray-300 visible">
 						{isDelete || isEdit ? (
 							<>
-								<button
-									type="button"
+								<div
+									role="button"
 									className="p-1 hover:text-white"
 									onClick={handleTick}
 								>
 									<TickIcon />
-								</button>
-								<button
-									type="button"
+								</div>
+								<div
+									role="button"
 									className="p-1 hover:text-white"
 									onClick={handleCross}
 								>
 									<CrossIcon />
-								</button>
+								</div>
 							</>
 						) : (
 							<>
-								<button
-									type="button"
+								<div
+									role="button"
 									className="p-1 hover:text-white"
 									onClick={() => setIsEdit(true)}
 								>
 									<EditIcon />
-								</button>
-								<button
-									type="button"
+								</div>
+								<div
+									role="button"
 									className="p-1 hover:text-white"
 									onClick={() => setIsDelete(true)}
 								>
 									<DeleteIcon />
-								</button>
+								</div>
 							</>
 						)}
 					</div>

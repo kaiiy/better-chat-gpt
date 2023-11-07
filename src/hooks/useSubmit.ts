@@ -31,8 +31,9 @@ const useSubmit = () => {
 
 		try {
 			let stream = null;
-			if (chats[currentChatIndex].messages.length === 0)
+			if (chats[currentChatIndex].messages.length === 0) {
 				throw new Error("No messages submitted!");
+			}
 
 			const messages = limitMessageTokens(
 				chats[currentChatIndex].messages,
@@ -54,10 +55,11 @@ const useSubmit = () => {
 			}
 
 			if (stream !== null) {
-				if (stream.locked)
+				if (stream.locked) {
 					throw new Error(
 						"Oops, the stream is locked right now. Please try again",
 					);
+				}
 				const reader = stream.getReader();
 				let reading = true;
 				let partial = "";
@@ -127,7 +129,7 @@ const useSubmit = () => {
 
 				const message: MessageInterface = {
 					role: "user",
-					content: `Generate a title in less than 6 words for the following message (language: English):\n"""\nUser: ${user_message}\nAssistant: ${assistant_message}\n"""`,
+					content: `Generate a title in less than 5 words for the following message (language: English):\n"""\nUser: ${user_message}\nAssistant: ${assistant_message}\n"""`,
 				};
 
 				const title = await generateTitle({
@@ -152,7 +154,7 @@ const useSubmit = () => {
 			}
 		} catch (e: unknown) {
 			const err = (e as Error).message;
-			console.log(err);
+			console.error(err);
 			setError(err);
 		}
 		setGenerating(false);
