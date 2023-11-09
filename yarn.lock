@@ -2497,12 +2497,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/papaparse@npm:^5.3.10":
-  version: 5.3.10
-  resolution: "@types/papaparse@npm:5.3.10"
+"@types/papaparse@npm:^5.3.11":
+  version: 5.3.11
+  resolution: "@types/papaparse@npm:5.3.11"
   dependencies:
     "@types/node": "npm:*"
-  checksum: d927e04ee0631e9be2ee5149ccfdeaae0a30ef32d810e8a605288f6521062c6fc7f03adf3897ce384dd39e43d57f1225d638423db94e5727af27cc5489ffeccb
+  checksum: 1b967274ca6e14d3a82944efad409e93e90cc605145fc94dd003706e2765b03433f26b9deaf515ba9e4c00cb903cc1a70eb19bc1f3063f81073ab4592830fb9e
   languageName: node
   linkType: hard
 
@@ -2527,21 +2527,21 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react-dom@npm:^18.2.14":
-  version: 18.2.14
-  resolution: "@types/react-dom@npm:18.2.14"
+"@types/react-dom@npm:^18.2.15":
+  version: 18.2.15
+  resolution: "@types/react-dom@npm:18.2.15"
   dependencies:
     "@types/react": "npm:*"
-  checksum: 1f79a7708d038cd651bdb21e01a99c594761bc9a40a565abe98958e1d27facfeb6e9824ddf6ae3504e7a56568f0f3da2380fe52ac18477b5864d2d5cf1386a9e
+  checksum: 70e86f15f69f89b8f179139ab2e8a8aa9765e742789f5dd5a46fec40d4300ada8fe3349cceda42b9964a018982d7ccb7d791b47f781966c992bfd37da909fbd3
   languageName: node
   linkType: hard
 
-"@types/react-scroll-to-bottom@npm:^4.2.3":
-  version: 4.2.3
-  resolution: "@types/react-scroll-to-bottom@npm:4.2.3"
+"@types/react-scroll-to-bottom@npm:^4.2.4":
+  version: 4.2.4
+  resolution: "@types/react-scroll-to-bottom@npm:4.2.4"
   dependencies:
     "@types/react": "npm:*"
-  checksum: b9fe1d21a85379d5e6a4676430f79067999adc5bad32b3be88831b52218474781f1b21ecb2c6f06c94fbfb86f08525efc1aa5197c0fc98b2e49e7c31e4e50188
+  checksum: 2a98d07b14bf4c98cc81a956bb3d943a3af3a461b6389de2f2ca736d0eade14630d002c9ee003af6b40ad8bcb51c66e05ba8e629c7cf633c1e36fe400165ce78
   languageName: node
   linkType: hard
 
@@ -2600,10 +2600,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/uuid@npm:^9.0.6":
-  version: 9.0.6
-  resolution: "@types/uuid@npm:9.0.6"
-  checksum: 8fb6b3a583a035b8e917192eeadaadadfbfd29315094aafd3478e11f11a986cb118ee0f388b15035fda063d9f1a32fa62e7a791215b762fe1e2c177929ca7146
+"@types/uuid@npm:^9.0.7":
+  version: 9.0.7
+  resolution: "@types/uuid@npm:9.0.7"
+  checksum: b329ebd4f9d1d8e08d4f2cc211be4922d70d1149f73d5772630e4a3acfb5170c6d37b3d7a39a0412f1a56e86e8a844c7f297c798b082f90380608bf766688787
   languageName: node
   linkType: hard
 
@@ -2928,11 +2928,11 @@ __metadata:
     "@biomejs/biome": "npm:1.3.3"
     "@dqbd/tiktoken": "npm:^1.0.7"
     "@tailwindcss/typography": "npm:^0.5.10"
-    "@types/papaparse": "npm:^5.3.10"
-    "@types/react": "npm:^18.2.36"
-    "@types/react-dom": "npm:^18.2.14"
-    "@types/react-scroll-to-bottom": "npm:^4.2.3"
-    "@types/uuid": "npm:^9.0.6"
+    "@types/papaparse": "npm:^5.3.11"
+    "@types/react": "npm:^18.2.37"
+    "@types/react-dom": "npm:^18.2.15"
+    "@types/react-scroll-to-bottom": "npm:^4.2.4"
+    "@types/uuid": "npm:^9.0.7"
     "@vitejs/plugin-react-swc": "npm:^3.4.1"
     autoprefixer: "npm:^10.4.16"
     html2canvas: "npm:^1.4.1"
