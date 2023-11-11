@@ -1359,12 +1359,21 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/runtime@npm:^7.12.5, @babel/runtime@npm:^7.18.3, @babel/runtime@npm:^7.19.4":
+"@babel/runtime@npm:^7.12.5, @babel/runtime@npm:^7.18.3":
   version: 7.21.0
   resolution: "@babel/runtime@npm:7.21.0"
   dependencies:
     regenerator-runtime: "npm:^0.13.11"
   checksum: 8fc28acf3b353390a8188a63d443719847b24b66028fdc8bb301c08e2ee013b52aaeb9d0e9783fa5dcd72bb3c0172fb647419db32392101001738356bdc1f4ab
+  languageName: node
+  linkType: hard
+
+"@babel/runtime@npm:^7.23.2":
+  version: 7.23.2
+  resolution: "@babel/runtime@npm:7.23.2"
+  dependencies:
+    regenerator-runtime: "npm:^0.14.0"
+  checksum: 271fcfad8574269d9967b8a1c03f2e1eab108a52ad7c96ed136eee0b11f46156f1186637bd5e79a4207163db9a00413cd70a6428e137b982d0ee8ab85eb9f438
   languageName: node
   linkType: hard
 
@@ -2936,18 +2945,18 @@ __metadata:
     "@vitejs/plugin-react-swc": "npm:^3.4.1"
     autoprefixer: "npm:^10.4.16"
     html2canvas: "npm:^1.4.1"
-    i18next: "npm:^23.6.0"
-    i18next-browser-languagedetector: "npm:^7.1.0"
-    i18next-http-backend: "npm:^2.3.1"
+    i18next: "npm:^23.7.3"
+    i18next-browser-languagedetector: "npm:^7.2.0"
+    i18next-http-backend: "npm:^2.4.1"
     katex: "npm:^0.16.9"
-    knip: "npm:^2.40.0"
+    knip: "npm:^2.40.2"
     mabiki: "npm:^1.0.1"
     match-sorter: "npm:^6.3.1"
     papaparse: "npm:^5.4.1"
     postcss: "npm:^8.4.31"
     react: "npm:^18.2.0"
     react-dom: "npm:^18.2.0"
-    react-i18next: "npm:^13.3.1"
+    react-i18next: "npm:^13.4.0"
     react-markdown: "npm:~8.0.7"
     react-scroll-to-bottom: "npm:^4.2.0"
     rehype-highlight: "npm:^6.0.0"
@@ -4485,30 +4494,30 @@ __metadata:
   languageName: node
   linkType: hard
 
-"i18next-browser-languagedetector@npm:^7.1.0":
-  version: 7.1.0
-  resolution: "i18next-browser-languagedetector@npm:7.1.0"
+"i18next-browser-languagedetector@npm:^7.2.0":
+  version: 7.2.0
+  resolution: "i18next-browser-languagedetector@npm:7.2.0"
   dependencies:
-    "@babel/runtime": "npm:^7.19.4"
-  checksum: d7cd0ea0ad6047e786de665d67b41cbb0940a2983eb2c53dd85a5d71f88e170550bba8de45728470a2b5f88060bed2c79f330aff9806dd50ef58ade0ec7b8ca3
+    "@babel/runtime": "npm:^7.23.2"
+  checksum: d7676e6c9895d46e659effaeba11f10c39cbe99429560667de7689cb56db6977239d350be850c4caf4279781c19c50a7193cb9cc38bb485f391b8e1893e407ae
   languageName: node
   linkType: hard
 
-"i18next-http-backend@npm:^2.3.1":
-  version: 2.3.1
-  resolution: "i18next-http-backend@npm:2.3.1"
+"i18next-http-backend@npm:^2.4.1":
+  version: 2.4.1
+  resolution: "i18next-http-backend@npm:2.4.1"
   dependencies:
     cross-fetch: "npm:4.0.0"
-  checksum: 74d26d3bd77777df0ffc8a882e00cc20ac497f6c03b2cf5b64657b39a8f6f523ea2bc063cdefc9b85742ae4bbb4b93988909ea69c31ac1a4c4867d7b8ca25f5e
+  checksum: d4b5c5612d7940722b39a77312b19c2e7ff0d501e6a3fcac07ec5585a7141e4fad8f40688e63dc99416e2377c26a02b97bc86f42709331585007b9b712be5068
   languageName: node
   linkType: hard
 
-"i18next@npm:^23.6.0":
-  version: 23.6.0
-  resolution: "i18next@npm:23.6.0"
+"i18next@npm:^23.7.3":
+  version: 23.7.3
+  resolution: "i18next@npm:23.7.3"
   dependencies:
-    "@babel/runtime": "npm:^7.22.5"
-  checksum: 292055897c01dd7720b3c6ab1321bd2b3b1f89e36702da9da90493f2a9e931e6a1f762a5b40d8e91c72803a8e80102ba9b64a4ffc0174acb91805f969072437c
+    "@babel/runtime": "npm:^7.23.2"
+  checksum: b1c8f5c64c9387adac25958af06a41262a78b1e1ccc4fa2ec4407938a60a7bfd17befbb8541f123cbeccb2b0e8a0e52f47a496d6d95ccd08df5a9b0b53d703b6
   languageName: node
   linkType: hard
 
@@ -5062,9 +5071,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"knip@npm:^2.40.0":
-  version: 2.40.0
-  resolution: "knip@npm:2.40.0"
+"knip@npm:^2.40.2":
+  version: 2.40.2
+  resolution: "knip@npm:2.40.2"
   dependencies:
     "@ericcornelissen/bash-parser": "npm:^0.5.2"
     "@npmcli/map-workspaces": "npm:^3.0.4"
@@ -5088,7 +5097,7 @@ __metadata:
     zod-validation-error: "npm:1.5.0"
   bin:
     knip: dist/cli.js
-  checksum: 36a7ba6d4645e1666e63502eef9de4c70dcbe4d8e02045af5463bc4300b7559bdec4ddb01a7b12964f064f5148e169bbe2e450e2a6ef4e729c27213b963db268
+  checksum: 05d33914129f61574c8d8f64aca0d7a66045bccc8f5cf389f1ced4a2460321746a577c470f6f81ee153cdd137b917588c2dcc61dcbe74c21754d79b37d4ce908
   languageName: node
   linkType: hard
 
@@ -6927,9 +6936,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-i18next@npm:^13.3.1":
-  version: 13.3.1
-  resolution: "react-i18next@npm:13.3.1"
+"react-i18next@npm:^13.4.0":
+  version: 13.4.0
+  resolution: "react-i18next@npm:13.4.0"
   dependencies:
     "@babel/runtime": "npm:^7.22.5"
     html-parse-stringify: "npm:^3.0.1"
@@ -6941,7 +6950,7 @@ __metadata:
       optional: true
     react-native:
       optional: true
-  checksum: a19701359ac8ae1c75c68012215c024fd6c896c86e2f254c43a135279afb2035ed3b37c9f07ae2662fa1e44e36b3de918287ebecf841dd1bce6ecaba3a055fc4
+  checksum: b14a11a59a5e446a3ac3b513b5606b5129074b71ece54529191dfa4ea19fcde0b937789305699dc4b2e6cf77d4bb680aa9f275a0c4c622fedf562a6f1587cbb3
   languageName: node
   linkType: hard
 
@@ -7070,6 +7079,13 @@ __metadata:
   version: 0.13.11
   resolution: "regenerator-runtime@npm:0.13.11"
   checksum: 12b069dc774001fbb0014f6a28f11c09ebfe3c0d984d88c9bced77fdb6fedbacbca434d24da9ae9371bfbf23f754869307fb51a4c98a8b8b18e5ef748677ca24
+  languageName: node
+  linkType: hard
+
+"regenerator-runtime@npm:^0.14.0":
+  version: 0.14.0
+  resolution: "regenerator-runtime@npm:0.14.0"
+  checksum: e25f062c1a183f81c99681691a342760e65c55e8d3a4d4fe347ebe72433b123754b942b70b622959894e11f8a9131dc549bd3c9a5234677db06a4af42add8d12
   languageName: node
   linkType: hard
 
