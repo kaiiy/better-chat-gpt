@@ -1,13 +1,10 @@
 import useStore from "@store/store";
-import React from "react";
-import { useTranslation } from "react-i18next";
-import { v4 as uuidv4 } from "uuid";
+import { v4 as uuidV4 } from "uuid";
 
 import NewFolderIcon from "@icon/NewFolderIcon";
 import { Folder, FolderCollection } from "@type/chat";
 
 const NewFolder = () => {
-	const { t } = useTranslation();
 	const generating = useStore((state) => state.generating);
 	const setFolders = useStore((state) => state.setFolders);
 
@@ -26,7 +23,7 @@ const NewFolder = () => {
 			JSON.stringify(folders),
 		);
 
-		const id = uuidv4();
+		const id = uuidV4();
 		const newFolder: Folder = {
 			id,
 			name,

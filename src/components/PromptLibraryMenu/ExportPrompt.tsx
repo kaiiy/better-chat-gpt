@@ -1,16 +1,13 @@
 import useStore from "@store/store";
 import { exportPrompts } from "@utils/prompt";
-import React from "react";
-import { useTranslation } from "react-i18next";
 
 const ExportPrompt = () => {
-	const { t } = useTranslation();
 	const prompts = useStore.getState().prompts;
 
 	return (
 		<div className="mt-4">
 			<div className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">
-				{t("export")} (CSV)
+				Export (CSV)
 			</div>
 			<button
 				type="button"
@@ -19,7 +16,7 @@ const ExportPrompt = () => {
 					exportPrompts(prompts);
 				}}
 			>
-				{t("export")}
+				Export
 			</button>
 		</div>
 	);

@@ -171,7 +171,6 @@ const EditViewButtons = memo(
 		setIsEdit: React.Dispatch<React.SetStateAction<boolean>>;
 		_setContent: React.Dispatch<React.SetStateAction<string>>;
 	}) => {
-		const { t } = useTranslation();
 		const generating = useStore.getState().generating;
 		const advancedMode = useStore((state) => state.advancedMode);
 
@@ -187,7 +186,7 @@ const EditViewButtons = memo(
 							onClick={handleSaveAndSubmit}
 						>
 							<div className="flex items-center justify-center gap-2">
-								{t("saveAndSubmit")}
+								Save and Submit
 							</div>
 						</button>
 					)}
@@ -203,9 +202,7 @@ const EditViewButtons = memo(
 						}`}
 						onClick={handleSave}
 					>
-						<div className="flex items-center justify-center gap-2">
-							{t("save")}
-						</div>
+						<div className="flex items-center justify-center gap-2">Save</div>
 					</button>
 
 					{sticky || (
@@ -217,7 +214,7 @@ const EditViewButtons = memo(
 							}}
 						>
 							<div className="flex items-center justify-center gap-2">
-								{t("saveAndSubmit")}
+								Save and Submit
 							</div>
 						</button>
 					)}
@@ -229,7 +226,7 @@ const EditViewButtons = memo(
 							onClick={() => setIsEdit(false)}
 						>
 							<div className="flex items-center justify-center gap-2">
-								{t("cancel")}
+								Cancel
 							</div>
 						</button>
 					)}

@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from "react";
-import { useTranslation } from "react-i18next";
+import { useEffect, useState } from "react";
 
 import useStore from "@store/store";
 
@@ -25,8 +24,6 @@ const tokenCostToCost = (
 };
 
 const TotalTokenCost = () => {
-	const { t } = useTranslation(["main", "model"]);
-
 	const totalTokenUsed = useStore((state) => state.totalTokenUsed);
 	const setTotalTokenUsed = useStore((state) => state.setTotalTokenUsed);
 	const countTotalTokens = useStore((state) => state.countTotalTokens);
@@ -54,7 +51,7 @@ const TotalTokenCost = () => {
 				<table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
 					<thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
 						<tr>
-							<th className="px-4 py-2">{t("model", { ns: "model" })}</th>
+							<th className="px-4 py-2">Model</th>
 							<th className="px-4 py-2">USD</th>
 						</tr>
 					</thead>
@@ -69,7 +66,7 @@ const TotalTokenCost = () => {
 							</tr>
 						))}
 						<tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 font-bold">
-							<td className="px-4 py-2">{t("total", { ns: "main" })}</td>
+							<td className="px-4 py-2">Total</td>
 							<td className="px-4 py-2">
 								{costMapping
 									.reduce((prev, curr) => prev + curr.cost, 0)
@@ -80,7 +77,7 @@ const TotalTokenCost = () => {
 				</table>
 			</div>
 			<div className="btn btn-neutral cursor-pointer" onClick={resetCost}>
-				{t("resetCost", { ns: "main" })}
+				Reset Costs
 			</div>
 		</div>
 	) : (
@@ -89,8 +86,6 @@ const TotalTokenCost = () => {
 };
 
 export const TotalTokenCostToggle = () => {
-	const { t } = useTranslation("main");
-
 	const setCountTotalTokens = useStore((state) => state.setCountTotalTokens);
 
 	const [isChecked, setIsChecked] = useState<boolean>(
@@ -103,7 +98,7 @@ export const TotalTokenCostToggle = () => {
 
 	return (
 		<Toggle
-			label={t("countTotalTokens") as string}
+			label={"Count total tokens"}
 			isChecked={isChecked}
 			setIsChecked={setIsChecked}
 		/>
@@ -111,7 +106,6 @@ export const TotalTokenCostToggle = () => {
 };
 
 export const TotalTokenCostDisplay = () => {
-	const { t } = useTranslation();
 	const totalTokenUsed = useStore((state) => state.totalTokenUsed);
 
 	const [totalCost, setTotalCost] = useState<number>(0);
