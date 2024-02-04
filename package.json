@@ -58,11 +58,11 @@
     "vite-plugin-wasm": "^3.2.2"
   },
   "volta": {
-    "node": "20.9.0",
-    "yarn": "4.0.1"
+    "node": "20.11.0",
+    "yarn": "4.1.0"
   },
   "resolutions": {
     "@types/react": "^18.2.36"
   },
-  "packageManager": "yarn@4.0.1"
+  "packageManager": "yarn@4.1.0"
 }
