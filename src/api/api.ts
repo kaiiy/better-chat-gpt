@@ -57,11 +57,10 @@ export const getChatCompletionStream = async (
 			throw new Error(
 				`${text}\nMessage from Better ChatGPT:\nPlease ensure that you have access to the GPT-4 API!`,
 			);
-		} else {
-			throw new Error(
-				"Message from Better ChatGPT:\nInvalid API endpoint! We recommend you to check your free API endpoint.",
-			);
 		}
+		throw new Error(
+			"Message from Better ChatGPT:\nInvalid API endpoint! We recommend you to check your free API endpoint.",
+		);
 	}
 
 	if (response.status === 429 || !response.ok) {

@@ -49,7 +49,6 @@ const ChatHistoryList = () => {
 			});
 
 		if (chats) {
-			// biome-ignore lint/complexity/noForEach: <explanation>
 			chats.forEach((chat, index) => {
 				const _filterLowerCase = filterRef.current.toLowerCase();
 				const _chatTitle = chat.title.toLowerCase();

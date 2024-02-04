@@ -19,11 +19,12 @@ const fetchTitle = async ({
 	message,
 	apiKey,
 }: FetchTitleProps): Promise<string> => {
-	let data;
+	let data: any;
 	try {
 		if (!apiKey || apiKey.length === 0) {
 			throw new Error("No API key supplied! Please check your API settings.");
-		} else if (apiKey.length > 0) {
+		}
+		if (apiKey.length > 0) {
 			data = await getChatCompletion(
 				useStore.getState().apiEndpoint,
 				message,

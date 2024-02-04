@@ -182,9 +182,8 @@ const code = memo((props: CodeProps) => {
 
 	if (inline) {
 		return <code className={className}>{children}</code>;
-	} else {
-		return <CodeBlock lang={lang || "text"} codeChildren={children} />;
 	}
+	return <CodeBlock lang={lang || "text"} codeChildren={children} />;
 });
 
 const p = memo(

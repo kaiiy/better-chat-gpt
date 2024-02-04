@@ -45,7 +45,8 @@ const useSubmit = () => {
 			// no api key (free)
 			if (!apiKey || apiKey.length === 0) {
 				throw new Error("No API key supplied! Please check your API settings.");
-			} else if (apiKey.length > 0) {
+			}
+			if (apiKey.length > 0) {
 				stream = await getChatCompletionStream(
 					useStore.getState().apiEndpoint,
 					messages,

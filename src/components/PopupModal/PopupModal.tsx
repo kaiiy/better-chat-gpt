@@ -93,9 +93,8 @@ const PopupModal = ({
 			</div>,
 			modalRoot,
 		);
-	} else {
-		throw new Error("modal-root not found");
 	}
+	throw new Error("modal-root not found");
 };
 
 export default PopupModal;
