@@ -2940,7 +2940,6 @@ __metadata:
     autoprefixer: "npm:^10.4.17"
     html2canvas: "npm:^1.4.1"
     i18next: "npm:^23.7.3"
-    i18next-browser-languagedetector: "npm:^7.2.0"
     i18next-http-backend: "npm:^2.4.3"
     katex: "npm:^0.16.9"
     knip: "npm:^4.3.1"
@@ -4490,15 +4489,6 @@ __metadata:
   dependencies:
     ms: "npm:^2.0.0"
   checksum: 10c0/f34a2c20161d02303c2807badec2f3b49cbfbbb409abd4f95a07377ae01cfe6b59e3d15ac609cffcd8f2521f0eb37b7e1091acf65da99aa2a4f1ad63c21e7e7a
-  languageName: node
-  linkType: hard
-
-"i18next-browser-languagedetector@npm:^7.2.0":
-  version: 7.2.0
-  resolution: "i18next-browser-languagedetector@npm:7.2.0"
-  dependencies:
-    "@babel/runtime": "npm:^7.23.2"
-  checksum: 10c0/d7676e6c9895d46e659effaeba11f10c39cbe99429560667de7689cb56db6977239d350be850c4caf4279781c19c50a7193cb9cc38bb485f391b8e1893e407ae
   languageName: node
   linkType: hard
 
